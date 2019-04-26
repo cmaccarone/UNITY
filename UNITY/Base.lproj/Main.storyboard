@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
         </array>
@@ -112,9 +115,9 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLg-55-dnG">
-                                <rect key="frame" x="166.5" y="211.5" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLg-55-dnG">
+                                <rect key="frame" x="157.5" y="220" width="60.5" height="15"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="11"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -142,7 +145,7 @@
                         <constraints>
                             <constraint firstItem="cNC-T9-Fdg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0v8-P4-Vro"/>
                             <constraint firstItem="f9V-9k-Eif" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="84" id="3pz-SK-boL"/>
-                            <constraint firstItem="cNC-T9-Fdg" firstAttribute="top" secondItem="zLg-55-dnG" secondAttribute="bottom" constant="8" id="DEp-3u-ghx"/>
+                            <constraint firstItem="cNC-T9-Fdg" firstAttribute="top" secondItem="zLg-55-dnG" secondAttribute="bottom" constant="5" id="DEp-3u-ghx"/>
                             <constraint firstItem="zyy-SC-qe3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E5x-rn-M8l"/>
                             <constraint firstItem="XxU-RY-HIy" firstAttribute="top" secondItem="zyy-SC-qe3" secondAttribute="bottom" constant="61" id="IZs-na-8qs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XxU-RY-HIy" secondAttribute="trailing" constant="100" id="NZg-4n-TH6"/>
