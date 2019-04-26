@@ -10,7 +10,7 @@
 		1B3F7AA52273B467002B6E7A /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F7AA42273B467002B6E7A /* RoundedButton.swift */; };
 		1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B891A5722739CA0000B552B /* RoundedTextField.swift */; };
 		1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F7227379CF007A483C /* AppDelegate.swift */; };
-		1BA0F8FA227379CF007A483C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F9227379CF007A483C /* ViewController.swift */; };
+		1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F9227379CF007A483C /* SignInVC.swift */; };
 		1BA0F8FD227379CF007A483C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA0F8FB227379CF007A483C /* Main.storyboard */; };
 		1BA0F8FF227379D0007A483C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA0F8FE227379D0007A483C /* Assets.xcassets */; };
 		1BA0F902227379D0007A483C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA0F900227379D0007A483C /* LaunchScreen.storyboard */; };
@@ -34,7 +34,7 @@
 		1B891A5722739CA0000B552B /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		1BA0F8F4227379CF007A483C /* UNITY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNITY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA0F8F7227379CF007A483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1BA0F8F9227379CF007A483C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1BA0F8F9227379CF007A483C /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		1BA0F8FC227379CF007A483C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BA0F8FE227379D0007A483C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BA0F901227379D0007A483C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +82,21 @@
 			path = "CUSTOM SUBCLASSES";
 			sourceTree = "<group>";
 		};
+		1B6087332273C9010036F712 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BA0F8F9227379CF007A483C /* SignInVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1B6087342273C9210036F712 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1BA0F8EB227379CF007A483C = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +119,10 @@
 		1BA0F8F6227379CF007A483C /* UNITY */ = {
 			isa = PBXGroup;
 			children = (
+				1B6087342273C9210036F712 /* Models */,
+				1B6087332273C9010036F712 /* Controllers */,
 				1B3F7AA32273B429002B6E7A /* CUSTOM SUBCLASSES */,
 				1BA0F8F7227379CF007A483C /* AppDelegate.swift */,
-				1BA0F8F9227379CF007A483C /* ViewController.swift */,
 				1BA0F8FB227379CF007A483C /* Main.storyboard */,
 				1BA0F8FE227379D0007A483C /* Assets.xcassets */,
 				1BA0F900227379D0007A483C /* LaunchScreen.storyboard */,
@@ -252,7 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BA0F8FA227379CF007A483C /* ViewController.swift in Sources */,
+				1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */,
 				1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */,
 				1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */,
 				1B3F7AA52273B467002B6E7A /* RoundedButton.swift in Sources */,

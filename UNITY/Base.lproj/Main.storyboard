@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UNITY" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="UNITY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="cNC-T9-Fdg">
                                 <rect key="frame" x="40" y="240" width="295" height="116"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EMAIL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-N1-os7" customClass="RoundedTextField" customModule="UNITY" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XQh-N1-os7" customClass="RoundedTextField" customModule="UNITY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="47.5"/>
                                         <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -43,14 +43,14 @@
                                         </constraints>
                                         <color key="textColor" red="0.53725490196078429" green="0.58823529411764708" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="13"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="PASSWORD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ch7-NP-1jC" customClass="RoundedTextField" customModule="UNITY" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" textAlignment="center" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ch7-NP-1jC" customClass="RoundedTextField" customModule="UNITY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="68.5" width="295" height="47.5"/>
                                         <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -58,7 +58,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.53725490196078429" green="0.58823529411764708" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12"/>
@@ -78,6 +78,9 @@
                                             <constraint firstAttribute="height" constant="39" id="g1G-ix-idT"/>
                                         </constraints>
                                         <state key="normal" image="Artboard"/>
+                                        <connections>
+                                            <action selector="signInWithTouchID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oxm-SQ-Toc"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In with Touch ID" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJm-TE-atY">
                                         <rect key="frame" x="47" y="0.0" width="67" height="39"/>
@@ -109,6 +112,12 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLg-55-dnG">
+                                <rect key="frame" x="166.5" y="211.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxU-RY-HIy" customClass="RoundedButton" customModule="UNITY" customModuleProvider="target">
                                 <rect key="frame" x="100" y="464" width="175" height="47"/>
                                 <color key="backgroundColor" red="0.43137254901960786" green="0.46666666666666667" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,12 +133,16 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInRegular:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gRv-Nk-lED"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470588235294" green="0.23137254901960785" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cNC-T9-Fdg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0v8-P4-Vro"/>
                             <constraint firstItem="f9V-9k-Eif" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="84" id="3pz-SK-boL"/>
+                            <constraint firstItem="cNC-T9-Fdg" firstAttribute="top" secondItem="zLg-55-dnG" secondAttribute="bottom" constant="8" id="DEp-3u-ghx"/>
                             <constraint firstItem="zyy-SC-qe3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E5x-rn-M8l"/>
                             <constraint firstItem="XxU-RY-HIy" firstAttribute="top" secondItem="zyy-SC-qe3" secondAttribute="bottom" constant="61" id="IZs-na-8qs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XxU-RY-HIy" secondAttribute="trailing" constant="100" id="NZg-4n-TH6"/>
@@ -138,6 +151,7 @@
                             <constraint firstItem="XxU-RY-HIy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VtJ-52-ds5"/>
                             <constraint firstItem="tD9-Ma-t0I" firstAttribute="top" secondItem="XxU-RY-HIy" secondAttribute="bottom" constant="8" id="ZcU-zI-zVT"/>
                             <constraint firstItem="cNC-T9-Fdg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="arR-BF-C1M"/>
+                            <constraint firstItem="zLg-55-dnG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bJ3-2T-fEY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f9V-9k-Eif" secondAttribute="trailing" constant="97" id="hdB-cC-FN1"/>
                             <constraint firstItem="tD9-Ma-t0I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iF0-XI-BAC"/>
                             <constraint firstItem="XxU-RY-HIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="rK9-2P-Sg3"/>
@@ -146,6 +160,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="XQh-N1-os7" id="ReG-iY-H0s"/>
+                        <outlet property="errorLabel" destination="zLg-55-dnG" id="d9d-KZ-LNm"/>
+                        <outlet property="passwordTextField" destination="Ch7-NP-1jC" id="wG6-Bf-SVC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
