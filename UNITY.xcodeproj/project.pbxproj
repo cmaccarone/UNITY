@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B3F7AA52273B467002B6E7A /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F7AA42273B467002B6E7A /* RoundedButton.swift */; };
+		1B668BCA22756825008153B8 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B668BC922756825008153B8 /* RegisterVC.swift */; };
 		1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B891A5722739CA0000B552B /* RoundedTextField.swift */; };
 		1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F7227379CF007A483C /* AppDelegate.swift */; };
 		1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F9227379CF007A483C /* SignInVC.swift */; };
@@ -31,6 +32,7 @@
 		1B3F7AA12273B3C2002B6E7A /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		1B3F7AA22273B3C2002B6E7A /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		1B3F7AA42273B467002B6E7A /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		1B668BC922756825008153B8 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		1B891A5722739CA0000B552B /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		1BA0F8F4227379CF007A483C /* UNITY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNITY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA0F8F7227379CF007A483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				1BA0F8F9227379CF007A483C /* SignInVC.swift */,
+				1B668BC922756825008153B8 /* RegisterVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */,
 				1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */,
 				1B3F7AA52273B467002B6E7A /* RoundedButton.swift in Sources */,
+				1B668BCA22756825008153B8 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
