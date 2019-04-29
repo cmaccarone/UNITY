@@ -25,7 +25,7 @@ class RoundedTextField: UITextField {
         setupView()
         self.borderStyle = .none
         self.layer.borderColor = #colorLiteral(red: 0.4666666667, green: 0.4666666667, blue: 0.4666666667, alpha: 1)
-        self.layer.borderWidth = 1.5
+        self.layer.borderWidth = 2.5
         self.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.layer.opacity = 75
     

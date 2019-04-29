@@ -22,9 +22,31 @@ class SignInVC: UIViewController {
     }
     
     @IBAction func signInRegular(_ sender: Any) {
+        if emailTextField.text != nil, passwordTextField.text != nil { Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+            if let error = error {
+                self.errorLabel.isHidden = false
+                self.errorLabel.text = error.localizedDescription
+            return
+            }
+            if result?.user.uid != nil {
+               self.performSegue(withIdentifier: "showProjectsVC", sender: self)
+            }
+        }
+    }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboard()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        errorLabel.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
     

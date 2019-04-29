@@ -17,6 +17,22 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var passwordField: RoundedTextField!
     @IBOutlet weak var passwordVerifyField: RoundedTextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyboard()
+        
+        
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     func passwordsAreSame() -> Bool {
         if passwordField.text == passwordVerifyField.text {
             errorLabel.isHidden = true
@@ -33,17 +49,43 @@ class RegisterVC: UIViewController {
         if (passwordsAreSame()), emailField.text != nil, passwordField.text != nil, passwordVerifyField != nil {
             Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { (AuthResult, Error) in
                 if Error != nil {
-                    errorLabel.text = Error as! String
+                    self.errorLabel.text = Error?.localizedDescription
+                        self.errorLabel.isHidden = false
+                    print(Error.debugDescription)
+                    print(Error!.localizedDescription)
+                    return
+             
+                }
+                if AuthResult?.user.uid != nil {
+                    self.performSegue(withIdentifier: "presentProjectsVC", sender: self)
+                    return
+                } else {
+                    self.errorLabel.text = "ERROR"
                 }
             }
         }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
         
-    }
+     
     
         
    
 }
+}
+
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
 }
