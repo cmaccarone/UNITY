@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
     //vars
     var placeHolder: String?
     //outlets/Actions
@@ -37,6 +37,8 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +52,16 @@ class SignInVC: UIViewController {
     }
 
     
-   
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.select(self)
+            return true
+        } else {
+            textField.resignFirstResponder()
+            signInRegular(self)
+            return true
+        }
+    }
     
     
 }

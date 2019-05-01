@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RegisterVC: UIViewController {
+class RegisterVC: UIViewController, UITextFieldDelegate {
     //IB outlets Here
     
     @IBOutlet weak var errorLabel: UILabel!
@@ -20,7 +20,9 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
-        
+        emailField.delegate = self
+        passwordField.delegate = self
+        passwordVerifyField.delegate = self
         
     }
     
@@ -64,13 +66,26 @@ class RegisterVC: UIViewController {
                 }
             }
         }
+}
+    // controls return button UX behavior on keyboard.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == passwordVerifyField {
+            textField.resignFirstResponder()
+            registerButtonPressed(self)
+            return true
+        } else if textField == emailField {
+                passwordField.select(self)
+            return true
+        } else if textField == passwordField {
+                passwordVerifyField.select(self)
+            return true
+        }
+        return true
+        }
         
-     
+    }
     
-        
-   
-}
-}
+
 
 extension UIViewController
 {

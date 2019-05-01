@@ -9,14 +9,15 @@
 import UIKit
 import Firebase
 
-class ResetPasswordVC1: UIViewController {
+class ResetPasswordVC1: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var emailField: RoundedTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dismissKeyboard()
+        self.hideKeyboard()
+        self.emailField.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -42,7 +43,11 @@ class ResetPasswordVC1: UIViewController {
     }
     }
    
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        resetPassword(self)
+        return true
+    }
 
     
 }
