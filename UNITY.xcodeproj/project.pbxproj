@@ -11,6 +11,11 @@
 		1B668BCA22756825008153B8 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B668BC922756825008153B8 /* RegisterVC.swift */; };
 		1B668BCC2276B25F008153B8 /* ResetPasswordVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B668BCB2276B25F008153B8 /* ResetPasswordVC1.swift */; };
 		1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B891A5722739CA0000B552B /* RoundedTextField.swift */; };
+		1B98F6A52279EB7100F0C7BA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A42279EB7100F0C7BA /* TableViewCell.swift */; };
+		1B98F6A72279F0BB00F0C7BA /* ProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */; };
+		1B98F6A92279F23700F0C7BA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A82279F23700F0C7BA /* Project.swift */; };
+		1B98F6AB2279F45C00F0C7BA /* ProjectStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6AA2279F45C00F0C7BA /* ProjectStates.swift */; };
+		1B98F6AD2279F46F00F0C7BA /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6AC2279F46F00F0C7BA /* Tasks.swift */; };
 		1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F7227379CF007A483C /* AppDelegate.swift */; };
 		1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F9227379CF007A483C /* SignInVC.swift */; };
 		1BA0F8FD227379CF007A483C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA0F8FB227379CF007A483C /* Main.storyboard */; };
@@ -36,6 +41,11 @@
 		1B668BC922756825008153B8 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		1B668BCB2276B25F008153B8 /* ResetPasswordVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC1.swift; sourceTree = "<group>"; };
 		1B891A5722739CA0000B552B /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		1B98F6A42279EB7100F0C7BA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVC.swift; sourceTree = "<group>"; };
+		1B98F6A82279F23700F0C7BA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		1B98F6AA2279F45C00F0C7BA /* ProjectStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStates.swift; sourceTree = "<group>"; };
+		1B98F6AC2279F46F00F0C7BA /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		1BA0F8F4227379CF007A483C /* UNITY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNITY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA0F8F7227379CF007A483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BA0F8F9227379CF007A483C /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -82,6 +92,7 @@
 			children = (
 				1B891A5722739CA0000B552B /* RoundedTextField.swift */,
 				1B3F7AA42273B467002B6E7A /* RoundedButton.swift */,
+				1B98F6A42279EB7100F0C7BA /* TableViewCell.swift */,
 			);
 			path = "CUSTOM SUBCLASSES";
 			sourceTree = "<group>";
@@ -92,6 +103,7 @@
 				1BA0F8F9227379CF007A483C /* SignInVC.swift */,
 				1B668BC922756825008153B8 /* RegisterVC.swift */,
 				1B668BCB2276B25F008153B8 /* ResetPasswordVC1.swift */,
+				1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -99,6 +111,9 @@
 		1B6087342273C9210036F712 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1B98F6A82279F23700F0C7BA /* Project.swift */,
+				1B98F6AA2279F45C00F0C7BA /* ProjectStates.swift */,
+				1B98F6AC2279F46F00F0C7BA /* Tasks.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,11 +290,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */,
+				1B98F6AB2279F45C00F0C7BA /* ProjectStates.swift in Sources */,
 				1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */,
+				1B98F6A72279F0BB00F0C7BA /* ProjectVC.swift in Sources */,
 				1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */,
 				1B668BCC2276B25F008153B8 /* ResetPasswordVC1.swift in Sources */,
+				1B98F6AD2279F46F00F0C7BA /* Tasks.swift in Sources */,
 				1B3F7AA52273B467002B6E7A /* RoundedButton.swift in Sources */,
+				1B98F6A52279EB7100F0C7BA /* TableViewCell.swift in Sources */,
 				1B668BCA22756825008153B8 /* RegisterVC.swift in Sources */,
+				1B98F6A92279F23700F0C7BA /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
