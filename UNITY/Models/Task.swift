@@ -8,19 +8,15 @@
 
 import Foundation
 
-struct Tasks {
+struct Task {
     
     var name : String?
     var dueDate : Date?
     var reminderDate : Date?
     var reminderTime : String?
+    var taskCategory : ProjectState
    
-    init(name: String?,dueDate: Date?,reminderDate: Date?,reminderTime: String?){
-        self.name = name
-        self.dueDate = dueDate
-        self.reminderDate = reminderDate
-        self.reminderTime = reminderTime
-    }
+
     
     
 }

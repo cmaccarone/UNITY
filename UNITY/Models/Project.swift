@@ -15,11 +15,15 @@ struct Project {
     
     var name : String?
     var dueDate : Date?
-    var tasks = [Tasks]()
+    var tasks = [Task]()
+    var projectCategory: ProjectState?
     
-    init(name: String?, dueDate: Date?,tasks: [Tasks] ) {
+    init(name: String?, dueDate: Date?,tasks: [Task], projectCategory: ProjectState ) {
     self.name = name
     self.dueDate = dueDate
     self.tasks = tasks
+    self.projectCategory = projectCategory
     }
+    
+
 }

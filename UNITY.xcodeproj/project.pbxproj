@@ -15,7 +15,8 @@
 		1B98F6A72279F0BB00F0C7BA /* ProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */; };
 		1B98F6A92279F23700F0C7BA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A82279F23700F0C7BA /* Project.swift */; };
 		1B98F6AB2279F45C00F0C7BA /* ProjectStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6AA2279F45C00F0C7BA /* ProjectStates.swift */; };
-		1B98F6AD2279F46F00F0C7BA /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6AC2279F46F00F0C7BA /* Tasks.swift */; };
+		1B98F6AD2279F46F00F0C7BA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6AC2279F46F00F0C7BA /* Task.swift */; };
+		1B98F6AF227AAD3200F0C7BA /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6AE227AAD3200F0C7BA /* Data.swift */; };
 		1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F7227379CF007A483C /* AppDelegate.swift */; };
 		1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F9227379CF007A483C /* SignInVC.swift */; };
 		1BA0F8FD227379CF007A483C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA0F8FB227379CF007A483C /* Main.storyboard */; };
@@ -45,7 +46,8 @@
 		1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVC.swift; sourceTree = "<group>"; };
 		1B98F6A82279F23700F0C7BA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		1B98F6AA2279F45C00F0C7BA /* ProjectStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStates.swift; sourceTree = "<group>"; };
-		1B98F6AC2279F46F00F0C7BA /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		1B98F6AC2279F46F00F0C7BA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		1B98F6AE227AAD3200F0C7BA /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		1BA0F8F4227379CF007A483C /* UNITY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNITY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA0F8F7227379CF007A483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BA0F8F9227379CF007A483C /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -113,7 +115,8 @@
 			children = (
 				1B98F6A82279F23700F0C7BA /* Project.swift */,
 				1B98F6AA2279F45C00F0C7BA /* ProjectStates.swift */,
-				1B98F6AC2279F46F00F0C7BA /* Tasks.swift */,
+				1B98F6AC2279F46F00F0C7BA /* Task.swift */,
+				1B98F6AE227AAD3200F0C7BA /* Data.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,7 +298,8 @@
 				1B98F6A72279F0BB00F0C7BA /* ProjectVC.swift in Sources */,
 				1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */,
 				1B668BCC2276B25F008153B8 /* ResetPasswordVC1.swift in Sources */,
-				1B98F6AD2279F46F00F0C7BA /* Tasks.swift in Sources */,
+				1B98F6AD2279F46F00F0C7BA /* Task.swift in Sources */,
+				1B98F6AF227AAD3200F0C7BA /* Data.swift in Sources */,
 				1B3F7AA52273B467002B6E7A /* RoundedButton.swift in Sources */,
 				1B98F6A52279EB7100F0C7BA /* TableViewCell.swift in Sources */,
 				1B668BCA22756825008153B8 /* RegisterVC.swift in Sources */,

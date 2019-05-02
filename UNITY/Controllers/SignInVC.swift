@@ -39,7 +39,11 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         self.hideKeyboard()
         emailTextField.delegate = self
         passwordTextField.delegate = self
+       
     }
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -63,6 +67,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+  
     
 }
 
