@@ -1,5 +1,5 @@
 //
-//  Data.swift
+//  UserTypes.swift
 //  UNITY
 //
 //  Created by Caleb Maccarone on 5/3/19.
@@ -8,4 +8,8 @@
 
 import Foundation
 
-
+enum UserType {
+    case superUser
+    case projectManager
+    case teamMember
+}

@@ -12,18 +12,23 @@ import Foundation
 
 
 struct Project {
-    
+    //class variables
     var name : String?
     var dueDate : Date?
-    var tasks = [Task]()
-    var projectCategory: ProjectState?
+    var tasks = [Task?]()
     
-    init(name: String?, dueDate: Date?,tasks: [Task], projectCategory: ProjectState ) {
-    self.name = name
-    self.dueDate = dueDate
-    self.tasks = tasks
-    self.projectCategory = projectCategory
+    mutating func addTask(task:Task) {
+        tasks.append(task)
     }
     
-
+    mutating func removeTask(task:Task) {
+        if let indexOfItem = tasks.firstIndex(of: task) {
+        tasks.remove(at: indexOfItem)
+        }
+    }
+    
+    //Initializer
+    init(name: String?) {
+    self.name = name
+    }
 }

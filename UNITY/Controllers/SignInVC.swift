@@ -11,6 +11,9 @@ import FirebaseAuth
 
 class SignInVC: UIViewController, UITextFieldDelegate {
     //vars
+    let user = User()
+    let user1 = User()
+   
     var placeHolder: String?
     //outlets/Actions
     @IBOutlet weak var errorLabel: UILabel!
@@ -39,7 +42,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         self.hideKeyboard()
         emailTextField.delegate = self
         passwordTextField.delegate = self
-       
+        print(user.userID)
+        print(user1.userID)
     }
     
     

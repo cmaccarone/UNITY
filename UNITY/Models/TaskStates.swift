@@ -1,5 +1,5 @@
 //
-//  Data.swift
+//  TaskStates.swift
 //  UNITY
 //
 //  Created by Caleb Maccarone on 5/3/19.
@@ -8,4 +8,12 @@
 
 import Foundation
 
+enum TaskStates {
+    case incomplete
+    case completed
+}
 
+enum TaskType {
+    case myTask
+    case teamTask
+}
