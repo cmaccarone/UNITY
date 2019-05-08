@@ -55,7 +55,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "completed", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "projects", for: indexPath)
         cell.detailTextLabel?.text = projects[indexPath.row].name
         if let cell = cell as? CompletedTableViewCell {
         
