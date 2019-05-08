@@ -11,7 +11,6 @@
 		1B668BCA22756825008153B8 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B668BC922756825008153B8 /* RegisterVC.swift */; };
 		1B668BCC2276B25F008153B8 /* ResetPasswordVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B668BCB2276B25F008153B8 /* ResetPasswordVC1.swift */; };
 		1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B891A5722739CA0000B552B /* RoundedTextField.swift */; };
-		1B98F6A52279EB7100F0C7BA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A42279EB7100F0C7BA /* TableViewCell.swift */; };
 		1B98F6A72279F0BB00F0C7BA /* ProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */; };
 		1B98F6A92279F23700F0C7BA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A82279F23700F0C7BA /* Project.swift */; };
 		1B98F6AD2279F46F00F0C7BA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6AC2279F46F00F0C7BA /* Task.swift */; };
@@ -19,6 +18,10 @@
 		1B98F6E2227D313500F0C7BA /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6E1227D313500F0C7BA /* Data.swift */; };
 		1B98F6E4227D335E00F0C7BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6E3227D335E00F0C7BA /* User.swift */; };
 		1B98F6E6227D33D000F0C7BA /* UserTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6E5227D33D000F0C7BA /* UserTypes.swift */; };
+		1B98F6E822828B6800F0C7BA /* MyTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6E722828B6800F0C7BA /* MyTasksTableViewCell.swift */; };
+		1B98F6EA22828B8200F0C7BA /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6E922828B8200F0C7BA /* ProjectsTableViewCell.swift */; };
+		1B98F6EC22828B9100F0C7BA /* CompletedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6EB22828B9100F0C7BA /* CompletedTableViewCell.swift */; };
+		1B98F6EE22828DC600F0C7BA /* RoundedPlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6ED22828DC600F0C7BA /* RoundedPlusButton.swift */; };
 		1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F7227379CF007A483C /* AppDelegate.swift */; };
 		1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0F8F9227379CF007A483C /* SignInVC.swift */; };
 		1BA0F8FD227379CF007A483C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA0F8FB227379CF007A483C /* Main.storyboard */; };
@@ -44,7 +47,6 @@
 		1B668BC922756825008153B8 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		1B668BCB2276B25F008153B8 /* ResetPasswordVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC1.swift; sourceTree = "<group>"; };
 		1B891A5722739CA0000B552B /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
-		1B98F6A42279EB7100F0C7BA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVC.swift; sourceTree = "<group>"; };
 		1B98F6A82279F23700F0C7BA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		1B98F6AC2279F46F00F0C7BA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -52,6 +54,10 @@
 		1B98F6E1227D313500F0C7BA /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		1B98F6E3227D335E00F0C7BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1B98F6E5227D33D000F0C7BA /* UserTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypes.swift; sourceTree = "<group>"; };
+		1B98F6E722828B6800F0C7BA /* MyTasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTasksTableViewCell.swift; sourceTree = "<group>"; };
+		1B98F6E922828B8200F0C7BA /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
+		1B98F6EB22828B9100F0C7BA /* CompletedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTableViewCell.swift; sourceTree = "<group>"; };
+		1B98F6ED22828DC600F0C7BA /* RoundedPlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedPlusButton.swift; sourceTree = "<group>"; };
 		1BA0F8F4227379CF007A483C /* UNITY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UNITY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA0F8F7227379CF007A483C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BA0F8F9227379CF007A483C /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -98,7 +104,10 @@
 			children = (
 				1B891A5722739CA0000B552B /* RoundedTextField.swift */,
 				1B3F7AA42273B467002B6E7A /* RoundedButton.swift */,
-				1B98F6A42279EB7100F0C7BA /* TableViewCell.swift */,
+				1B98F6E722828B6800F0C7BA /* MyTasksTableViewCell.swift */,
+				1B98F6E922828B8200F0C7BA /* ProjectsTableViewCell.swift */,
+				1B98F6EB22828B9100F0C7BA /* CompletedTableViewCell.swift */,
+				1B98F6ED22828DC600F0C7BA /* RoundedPlusButton.swift */,
 			);
 			path = "CUSTOM SUBCLASSES";
 			sourceTree = "<group>";
@@ -301,16 +310,19 @@
 				1B98F6E4227D335E00F0C7BA /* User.swift in Sources */,
 				1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */,
 				1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */,
+				1B98F6EE22828DC600F0C7BA /* RoundedPlusButton.swift in Sources */,
 				1B98F6A72279F0BB00F0C7BA /* ProjectVC.swift in Sources */,
 				1BA0F8F8227379CF007A483C /* AppDelegate.swift in Sources */,
 				1B668BCC2276B25F008153B8 /* ResetPasswordVC1.swift in Sources */,
 				1B98F6E6227D33D000F0C7BA /* UserTypes.swift in Sources */,
+				1B98F6EC22828B9100F0C7BA /* CompletedTableViewCell.swift in Sources */,
+				1B98F6EA22828B8200F0C7BA /* ProjectsTableViewCell.swift in Sources */,
 				1B98F6AD2279F46F00F0C7BA /* Task.swift in Sources */,
 				1B98F6E0227D2E1E00F0C7BA /* TaskStates.swift in Sources */,
 				1B98F6E2227D313500F0C7BA /* Data.swift in Sources */,
 				1B3F7AA52273B467002B6E7A /* RoundedButton.swift in Sources */,
-				1B98F6A52279EB7100F0C7BA /* TableViewCell.swift in Sources */,
 				1B668BCA22756825008153B8 /* RegisterVC.swift in Sources */,
+				1B98F6E822828B6800F0C7BA /* MyTasksTableViewCell.swift in Sources */,
 				1B98F6A92279F23700F0C7BA /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

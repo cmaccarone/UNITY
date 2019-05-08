@@ -17,7 +17,6 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //Project VC cell array.
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -56,11 +55,14 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.init(style: .value1, reuseIdentifier: "cellular")
-        cell.layer.cornerRadius = cell.layer.frame.height/2
-        cell.backgroundColor = #colorLiteral(red: 0.2117647059, green: 0.231372549, blue: 0.2588235294, alpha: 1)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "completed", for: indexPath)
         cell.detailTextLabel?.text = projects[indexPath.row].name
-        return cell
+        if let cell = cell as? CompletedTableViewCell {
+        
+            
+            return cell
+        } else { return cell }
+    
     }
 
     
