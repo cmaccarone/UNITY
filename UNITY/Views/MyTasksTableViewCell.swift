@@ -2,7 +2,7 @@
 //  MyTasksTableViewCell.swift
 //  UNITY
 //
-//  Created by Caleb Maccarone on 5/7/19.
+//  Created by Caleb Maccarone on 5/10/19.
 //  Copyright © 2019 Caleb Maccarone. All rights reserved.
 //
 
@@ -10,20 +10,23 @@ import UIKit
 
 class MyTasksTableViewCell: UITableViewCell {
 
-    //Outlets
-    @IBOutlet weak var checkBox: UIImageView!
-    @IBOutlet weak private var dividerLine: UIView!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var checkBox: UIButton!
+    
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var projectDueDate: UILabel!
-    @IBOutlet weak var projectName: UILabel!
+    @IBOutlet weak var projectTeam: UILabel!
+    
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
-        self.layer.cornerRadius = self.layer.frame.height/2
-        self.layer.backgroundColor = #colorLiteral(red: 0.3529411765, green: 0.5921568627, blue: 0.831372549, alpha: 1)
+        backView.layer.cornerRadius = 25
+        backView.backgroundColor = #colorLiteral(red: 0.4190315306, green: 0.5464963913, blue: 0.7911339402, alpha: 1)
+        self.backgroundColor = .clear
+        
         
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

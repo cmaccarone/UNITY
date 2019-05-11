@@ -12,17 +12,22 @@ class ProjectsTableViewCell: UITableViewCell {
 
     
     
-    @IBOutlet weak var checkBox: UIImageView!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var checkBox: UIButton!
+    
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var projectDueDate: UILabel!
     @IBOutlet weak var projectTeam: UILabel!
-    @IBOutlet weak private var dividerLine: UIView!
+
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
-        self.layer.cornerRadius = self.layer.frame.height/2
-        self.layer.backgroundColor = #colorLiteral(red: 0.5764705882, green: 0.8823529412, blue: 0.5490196078, alpha: 1)
-        dividerLine.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        backView.layer.cornerRadius = 25
+        backView.backgroundColor = #colorLiteral(red: 0.7137254902, green: 0.8901960784, blue: 0.5019607843, alpha: 1)
+        self.backgroundColor = .clear
+ 
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

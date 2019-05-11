@@ -12,6 +12,6 @@ struct User: Hashable,Equatable {
     var name:String?
     var email:String?
     var userType:UserType?
-    var userID = UUID.init()
+    var userID: String?
 }
 

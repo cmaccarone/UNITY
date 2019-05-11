@@ -13,7 +13,9 @@ class RoundedPlusButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = self.layer.frame.height/2
-        self.layer.backgroundColor = #colorLiteral(red: 0.5764705882, green: 0.8823529412, blue: 0.5490196078, alpha: 1)
+        self.layer.backgroundColor = #colorLiteral(red: 0.7120720744, green: 0.8886485696, blue: 0.50163275, alpha: 1)
+        self.layer.borderColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+        self.layer.borderWidth = 3
     
     }
 }

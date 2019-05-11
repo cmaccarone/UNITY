@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Task: Hashable, Equatable {
+struct Task {
   
     
     
@@ -18,12 +18,10 @@ struct Task: Hashable, Equatable {
     var reminderTime : String?
     var taskType : TaskType?
     var taskState : TaskStates?
-    var identifier = UUID.init()
-    var delegatedUsers:Array<User>
+    
+    var delegatedUsers = [User?]()
    
-    static func == (lhs: Task, rhs: Task) -> Bool {
-        return lhs.identifier == rhs.identifier
-    }
+    
     
     
 }

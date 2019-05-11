@@ -220,10 +220,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3PE-Pj-cGJ">
-                                <rect key="frame" x="0.0" y="97" width="375" height="570"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="97" width="375" height="524"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projects" rowHeight="86" id="xu7-8e-n3R" customClass="ProjectsTableViewCell" customModule="UNITY" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projects" rowHeight="86" id="xu7-8e-n3R" customClass="ProjectsTableViewCell" customModule="UNITY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xu7-8e-n3R" id="Ymg-kx-DcH">
@@ -310,7 +314,7 @@
                                             <outlet property="taskName" destination="r60-Pa-S1c" id="tvI-5E-ybS"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myTasks" rowHeight="86" id="cvb-Kv-e1I" customClass="MyTasksTableViewCell" customModule="UNITY" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myTasks" rowHeight="86" id="cvb-Kv-e1I" customClass="MyTasksTableViewCell" customModule="UNITY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cvb-Kv-e1I" id="5h4-O5-DWy">
@@ -397,7 +401,7 @@
                                             <outlet property="taskName" destination="Tee-TJ-eho" id="YMA-yo-p0T"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="completed" rowHeight="86" id="7Nr-kD-mjR" customClass="CompletedTableViewCell" customModule="UNITY" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="completed" rowHeight="86" id="7Nr-kD-mjR" customClass="CompletedTableViewCell" customModule="UNITY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="200" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Nr-kD-mjR" id="tNM-e2-Mqp">
@@ -491,7 +495,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubE-Dv-lna" customClass="RoundedPlusButton" customModule="UNITY" customModuleProvider="target">
-                                <rect key="frame" x="162.5" y="577" width="50" height="50"/>
+                                <rect key="frame" x="162.5" y="597" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Ll0-JL-MST"/>
                                     <constraint firstAttribute="height" constant="50" id="eKq-oS-23e"/>
@@ -506,11 +510,11 @@
                         <constraints>
                             <constraint firstItem="ubE-Dv-lna" firstAttribute="centerX" secondItem="bbW-bt-DRh" secondAttribute="centerX" id="CmZ-NO-HqO"/>
                             <constraint firstItem="CH7-cQ-mep" firstAttribute="trailing" secondItem="3PE-Pj-cGJ" secondAttribute="trailing" id="IQ8-06-Rf7"/>
-                            <constraint firstItem="CH7-cQ-mep" firstAttribute="bottom" secondItem="ubE-Dv-lna" secondAttribute="bottom" constant="40" id="YFS-Da-yfb"/>
+                            <constraint firstItem="CH7-cQ-mep" firstAttribute="bottom" secondItem="ubE-Dv-lna" secondAttribute="bottom" constant="20" id="YFS-Da-yfb"/>
                             <constraint firstItem="S9c-t4-exr" firstAttribute="top" secondItem="CH7-cQ-mep" secondAttribute="top" constant="22" id="axj-de-7eo"/>
                             <constraint firstItem="3PE-Pj-cGJ" firstAttribute="leading" secondItem="CH7-cQ-mep" secondAttribute="leading" id="c5Q-P2-yhl"/>
                             <constraint firstItem="S9c-t4-exr" firstAttribute="centerX" secondItem="bbW-bt-DRh" secondAttribute="centerX" id="oLV-Uv-fcz"/>
-                            <constraint firstItem="3PE-Pj-cGJ" firstAttribute="bottom" secondItem="CH7-cQ-mep" secondAttribute="bottom" id="s9h-Rs-kC8"/>
+                            <constraint firstItem="3PE-Pj-cGJ" firstAttribute="bottom" secondItem="CH7-cQ-mep" secondAttribute="bottom" constant="-46" id="s9h-Rs-kC8"/>
                             <constraint firstItem="3PE-Pj-cGJ" firstAttribute="top" secondItem="S9c-t4-exr" secondAttribute="bottom" constant="8" id="ulv-TK-eY3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CH7-cQ-mep"/>

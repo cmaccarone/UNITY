@@ -21,11 +21,7 @@ struct Project {
         tasks.append(task)
     }
     
-    mutating func removeTask(task:Task) {
-        if let indexOfItem = tasks.firstIndex(of: task) {
-        tasks.remove(at: indexOfItem)
-        }
-    }
+   
     
     //Initializer
     init(name: String?) {

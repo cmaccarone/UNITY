@@ -42,8 +42,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         self.hideKeyboard()
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        print(user.userID)
-        print(user1.userID)
+        
     }
     
     
