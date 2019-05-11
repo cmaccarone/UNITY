@@ -77,7 +77,33 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     //Mark: Table View Delegate/Datasource
-
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "x") { (delete, view, complete) in
+            if indexPath.section == 0 {
+                self.myTasks.remove(at: indexPath.row)
+                tableView.reloadData()
+            } else if indexPath.section == 1 {
+                self.projects.remove(at: indexPath.row)
+                tableView.reloadData()
+            } else {
+                self.completed.remove(at: indexPath.row)
+                tableView.reloadData()
+            }
+            
+        }
+        let settings = UIContextualAction(style: .destructive, title: "Settings") { (delete, view, complete) in
+            //TODO: add segue to a settingsVC
+        }
+        
+        delete.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        delete.image = #imageLiteral(resourceName: "DELETE ITEM BUTTON")
+        settings.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        settings.image = #imageLiteral(resourceName: "settings Button Final")
+        return UISwipeActionsConfiguration(actions: [settings,delete])
+    }
+    
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionTitles = ["My Tasks","Projects","Completed"]
         let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 25))
