@@ -106,38 +106,38 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
                 self.myTasks.remove(at: indexPath.row)
              
             } else if indexPath.section == 1 {
+                //TODO: add segue to warning prompt "Project is about to be deleted would you like to continue?"
                 self.projects.remove(at: indexPath.row)
+                
                
             } else {
                 self.completed.remove(at: indexPath.row)
             
             }
-            print("deleted")
+            
         }
         let settings = SwipeAction(style: .default, title: nil) { (settings, indexPath) in
-            print("settings pushed")
+            //TODO: add segue to settingsVC
         }
-        
-        delete.backgroundColor = #colorLiteral(red: 0.2117647059, green: 0.231372549, blue: 0.2588235294, alpha: 1)
+        delete.backgroundColor = .clear
         delete.image = #imageLiteral(resourceName: "DELETE ITEM BUTTON")
-        settings.backgroundColor = #colorLiteral(red: 0.2117647059, green: 0.231372549, blue: 0.2588235294, alpha: 1)
+        settings.backgroundColor = .clear
         settings.image = #imageLiteral(resourceName: "Settings Item Button")
         return [delete,settings]
     }
   
+    
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
         var options = SwipeOptions()
-        options.transitionStyle = .border
+        options.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        options.transitionStyle = .drag
         options.expansionStyle = .destructiveAfterFill
         options.maximumButtonWidth = 150
         options.minimumButtonWidth = 50
-        
         return options
     }
     
 
-    
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionTitles = ["My Tasks","Projects","Completed"]
         let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 25))

@@ -211,7 +211,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9c-t4-exr">
-                                <rect key="frame" x="122" y="42" width="131.5" height="47"/>
+                                <rect key="frame" x="121.5" y="42" width="132" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="S9c-t4-exr" secondAttribute="height" multiplier="132:47" id="8mz-xl-BPx"/>
                                 </constraints>
@@ -306,6 +306,7 @@
                                                 <constraint firstItem="fnu-gd-M4x" firstAttribute="leading" secondItem="Ymg-kx-DcH" secondAttribute="leading" constant="10" id="lmm-Ke-pw1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="backView" destination="fnu-gd-M4x" id="oVK-Iw-pyD"/>
                                             <outlet property="checkBox" destination="bqk-lQ-iBb" id="HAq-6e-SZb"/>
@@ -386,6 +387,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="TWF-dP-1Ot" firstAttribute="leading" secondItem="5h4-O5-DWy" secondAttribute="leading" constant="10" id="Dy2-pN-IhB"/>
                                                 <constraint firstAttribute="trailing" secondItem="TWF-dP-1Ot" secondAttribute="trailing" constant="10" id="Q41-ey-iK1"/>
@@ -393,6 +395,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="TWF-dP-1Ot" secondAttribute="bottom" constant="10" id="uh6-vY-B0g"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="backView" destination="TWF-dP-1Ot" id="07i-rk-kkf"/>
                                             <outlet property="checkBox" destination="63j-f2-YVK" id="sG3-N6-MRT"/>
@@ -480,6 +483,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="bc1-QZ-GKf" secondAttribute="bottom" constant="10" id="rOM-Nm-BjF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="backView" destination="bc1-QZ-GKf" id="QHw-bz-zn8"/>
                                             <outlet property="checkBox" destination="xw8-AP-14p" id="n4r-7R-vEQ"/>
