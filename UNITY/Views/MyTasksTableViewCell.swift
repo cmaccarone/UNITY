@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class MyTasksTableViewCell: UITableViewCell {
+class MyTasksTableViewCell: SwipeTableViewCell {
 
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var checkBox: UIButton!

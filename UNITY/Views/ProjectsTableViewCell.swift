@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class ProjectsTableViewCell: UITableViewCell {
+class ProjectsTableViewCell: SwipeTableViewCell {
 
     
     

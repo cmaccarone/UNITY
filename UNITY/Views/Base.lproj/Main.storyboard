@@ -211,7 +211,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9c-t4-exr">
-                                <rect key="frame" x="121.5" y="42" width="132" height="47"/>
+                                <rect key="frame" x="122" y="42" width="131.5" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="S9c-t4-exr" secondAttribute="height" multiplier="132:47" id="8mz-xl-BPx"/>
                                 </constraints>
