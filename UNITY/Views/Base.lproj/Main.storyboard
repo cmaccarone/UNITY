@@ -227,7 +227,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projects" rowHeight="86" id="xu7-8e-n3R" customClass="ProjectsTableViewCell" customModule="UNITY" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="projects" rowHeight="86" id="xu7-8e-n3R" customClass="ProjectsTableViewCell" customModule="UNITY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xu7-8e-n3R" id="Ymg-kx-DcH">
@@ -299,6 +299,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="fnu-gd-M4x" secondAttribute="trailing" constant="10" id="NRF-cD-Ycm"/>
                                                 <constraint firstItem="fnu-gd-M4x" firstAttribute="top" secondItem="Ymg-kx-DcH" secondAttribute="top" constant="10" id="YIi-xi-TyW"/>
@@ -315,14 +316,14 @@
                                             <outlet property="taskName" destination="r60-Pa-S1c" id="tvI-5E-ybS"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myTasks" rowHeight="86" id="cvb-Kv-e1I" customClass="MyTasksTableViewCell" customModule="UNITY" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myTasks" rowHeight="86" id="cvb-Kv-e1I" customClass="MyTasksTableViewCell" customModule="UNITY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cvb-Kv-e1I" id="5h4-O5-DWy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWF-dP-1Ot">
+                                                <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWF-dP-1Ot">
                                                     <rect key="frame" x="10" y="10" width="355" height="65.5"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63j-f2-YVK">
@@ -404,7 +405,7 @@
                                             <outlet property="taskName" destination="Tee-TJ-eho" id="YMA-yo-p0T"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="completed" rowHeight="86" id="7Nr-kD-mjR" customClass="CompletedTableViewCell" customModule="UNITY" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="completed" rowHeight="86" id="7Nr-kD-mjR" customClass="CompletedTableViewCell" customModule="UNITY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="200" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Nr-kD-mjR" id="tNM-e2-Mqp">
@@ -476,6 +477,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="bc1-QZ-GKf" firstAttribute="top" secondItem="tNM-e2-Mqp" secondAttribute="top" constant="10" id="Ho9-L3-Xwi"/>
                                                 <constraint firstAttribute="trailing" secondItem="bc1-QZ-GKf" secondAttribute="trailing" constant="10" id="WKH-pL-nop"/>
@@ -504,7 +506,7 @@
                                     <constraint firstAttribute="width" constant="50" id="Ll0-JL-MST"/>
                                     <constraint firstAttribute="height" constant="50" id="eKq-oS-23e"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="45"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.26666666666666666" green="0.33725490196078434" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

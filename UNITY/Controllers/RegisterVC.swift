@@ -59,8 +59,15 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
              
                 }
                 if AuthResult?.user.uid != nil {
-                    self.performSegue(withIdentifier: "presentProjectsVC", sender: self)
-                    return
+                    DispatchQueue.global(qos: .userInteractive).async {
+                        //TODO: add instance of user to the Firestore database. This list will hold the username/ID in which I will store info like their friend's list, friend requests, messaging ect.
+                        DispatchQueue.main.async {
+                            //Main UI Thread
+                            self.performSegue(withIdentifier: "presentProjectsVC", sender: self)
+                            return
+                        }
+                    }
+                    
                 } else {
                     self.errorLabel.text = "ERROR"
                 }

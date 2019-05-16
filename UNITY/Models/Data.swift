@@ -7,5 +7,11 @@
 //
 
 import Foundation
+import Firebase
 
 
+let Db_Ref = Database.database().reference()
+
+class DataService {
+    let instance = DataService()
+}

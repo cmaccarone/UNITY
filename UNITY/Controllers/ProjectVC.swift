@@ -21,7 +21,8 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
 
     
     //Project VC cell array.
-    
+   
+   
     
     fileprivate func setupTableView() {
         tableView.estimatedRowHeight = 200
@@ -82,6 +83,13 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     }
     
     //Mark: Table View Delegate/Datasource
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
+        cell.backgroundView = nil
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete
         {
@@ -97,6 +105,8 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             }}
     }
     
+    
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         
@@ -104,18 +114,14 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             
             if indexPath.section == 0 {
                 self.myTasks.remove(at: indexPath.row)
-             
             } else if indexPath.section == 1 {
                 //TODO: add segue to warning prompt "Project is about to be deleted would you like to continue?"
                 self.projects.remove(at: indexPath.row)
-                
-               
             } else {
                 self.completed.remove(at: indexPath.row)
-            
             }
-            
         }
+        
         let settings = SwipeAction(style: .default, title: nil) { (settings, indexPath) in
             //TODO: add segue to settingsVC
         }
@@ -126,6 +132,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         return [delete,settings]
     }
   
+    
     
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
         var options = SwipeOptions()
@@ -138,6 +145,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     }
     
 
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionTitles = ["My Tasks","Projects","Completed"]
         let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 25))
@@ -176,12 +184,18 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
        
     }
     
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "myTasks", for: indexPath) as! MyTasksTableViewCell
+            cell.backgroundColor = .clear
             cell.delegate = self
+            cell.contentView.backgroundColor = .clear
+            tableView.backgroundColor = .clear
             cell.taskName.text = myTasks[indexPath.row].name
             cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
             cell.projectTeam.text = "team Name"
@@ -189,7 +203,10 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "projects", for: indexPath) as! ProjectsTableViewCell
+            
             cell.delegate = self
+            cell.contentView.backgroundColor = .clear
+            tableView.backgroundColor = .clear
             cell.taskName.text = projects[indexPath.row].name
             cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
             cell.projectTeam.text = "team Name"
@@ -197,6 +214,8 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "completed", for: indexPath) as! CompletedTableViewCell
             cell.delegate = self
+            cell.contentView.backgroundColor = .clear
+            tableView.backgroundColor = .clear
             cell.taskName.text = completed[indexPath.row].name
             cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
             cell.projectTeam.text = "team Name"

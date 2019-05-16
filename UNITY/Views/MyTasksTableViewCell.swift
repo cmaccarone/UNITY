@@ -24,9 +24,6 @@ class MyTasksTableViewCell: SwipeTableViewCell {
         super.awakeFromNib()
         backView.layer.cornerRadius = 25
         backView.backgroundColor = #colorLiteral(red: 0.4190315306, green: 0.5464963913, blue: 0.7911339402, alpha: 1)
-        self.backgroundColor = .clear
-        
-        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
