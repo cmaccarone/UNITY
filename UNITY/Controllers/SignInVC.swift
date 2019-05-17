@@ -6,6 +6,10 @@
 //  Copyright © 2019 Caleb Maccarone. All rights reserved.
 //
 
+enum UserDefaultKeys: String {
+    case UID = "UID"
+}
+
 import UIKit
 import FirebaseAuth
 
@@ -32,17 +36,23 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             return
             }
             if result?.user.uid != nil {
-               self.performSegue(withIdentifier: "showProjectsVC", sender: self)
+        
+                self.performSegue(withIdentifier: "showProjectsVC", sender: self)
+                
             }
         }
     }
     }
+    
+ 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboard()
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
     }
     
     
@@ -53,10 +63,6 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         errorLabel.isHidden = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        presentingViewController?.dismiss(animated: true, completion: nil)
-    }
 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

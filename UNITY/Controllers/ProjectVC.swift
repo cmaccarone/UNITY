@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SwipeCellKit
+import FirebaseAuth
 
 
 class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
@@ -19,6 +20,14 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     //filler data
     
 
+    @IBAction func signOutPressed(_ sender: Any) {
+                do {
+                    try Auth.auth().signOut()
+                } catch {
+                    print(error)
+                }
+    }
+    
     
     //Project VC cell array.
    

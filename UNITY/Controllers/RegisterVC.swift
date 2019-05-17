@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class RegisterVC: UIViewController, UITextFieldDelegate {
     //IB outlets Here
@@ -30,10 +31,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        presentingViewController?.dismiss(animated: true, completion: nil)
-    }
+
     
     func passwordsAreSame() -> Bool {
         if passwordField.text == passwordVerifyField.text {
@@ -58,6 +56,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
                     return
              
                 }
+                
                 if AuthResult?.user.uid != nil {
                     DispatchQueue.global(qos: .userInteractive).async {
                         //TODO: add instance of user to the Firestore database. This list will hold the username/ID in which I will store info like their friend's list, friend requests, messaging ect.
