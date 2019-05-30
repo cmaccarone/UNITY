@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1A9D45229DE3BA00E9E01F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1A9D44229DE3BA00E9E01F /* Extensions.swift */; };
 		1B2CCE8D228695D9002714F2 /* MyTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2CCE8C228695D9002714F2 /* MyTasksTableViewCell.swift */; };
 		1B2CCE8F228695EB002714F2 /* CompletedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2CCE8E228695EB002714F2 /* CompletedTableViewCell.swift */; };
 		1B3F7AA52273B467002B6E7A /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F7AA42273B467002B6E7A /* RoundedButton.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		0AC66BBBC9468C2800967B6A /* Pods-UNITY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNITY.release.xcconfig"; path = "Pods/Target Support Files/Pods-UNITY/Pods-UNITY.release.xcconfig"; sourceTree = "<group>"; };
+		1B1A9D44229DE3BA00E9E01F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1B2CCE8C228695D9002714F2 /* MyTasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTasksTableViewCell.swift; sourceTree = "<group>"; };
 		1B2CCE8E228695EB002714F2 /* CompletedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTableViewCell.swift; sourceTree = "<group>"; };
 		1B3F7A992273B3C0002B6E7A /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1A9D47229DE3CD00E9E01F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B1A9D44229DE3BA00E9E01F /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1B3F7A982273B399002B6E7A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +169,7 @@
 		1BA0F8F6227379CF007A483C /* UNITY */ = {
 			isa = PBXGroup;
 			children = (
+				1B1A9D47229DE3CD00E9E01F /* Extensions */,
 				1B6087342273C9210036F712 /* Models */,
 				1B6087332273C9010036F712 /* Controllers */,
 				1B3F7AA32273B429002B6E7A /* Views */,
@@ -310,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B98F6E4227D335E00F0C7BA /* User.swift in Sources */,
+				1B1A9D45229DE3BA00E9E01F /* Extensions.swift in Sources */,
 				1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */,
 				1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */,
 				1B2CCE8F228695EB002714F2 /* CompletedTableViewCell.swift in Sources */,

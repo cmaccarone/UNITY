@@ -29,13 +29,18 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signInRegular(_ sender: Any) {
-        if emailTextField.text != nil, passwordTextField.text != nil { Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+        if emailTextField.text != "", passwordTextField.text != "" {
+            addLoadingIconInMiddleOfScreen(startAnimating: true)
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
             if let error = error {
+                self.addLoadingIconInMiddleOfScreen(startAnimating: false)
                 self.errorLabel.isHidden = false
                 self.errorLabel.text = error.localizedDescription
             return
             }
             if result?.user.uid != nil {
+                
+                self.addLoadingIconInMiddleOfScreen(startAnimating: false)
         
                 self.performSegue(withIdentifier: "showProjectsVC", sender: self)
                 
