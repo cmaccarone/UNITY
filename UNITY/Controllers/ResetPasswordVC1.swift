@@ -31,14 +31,17 @@ class ResetPasswordVC1: UIViewController, UITextFieldDelegate {
     }
     @IBAction func resetPassword(_ sender: Any) {
         if let email = emailField.text {
+        startAnimating(size: .small)
         Auth.auth().sendPasswordReset(withEmail: email) { (error) in
             if let error = error {
+                self.stopAnimating()
                 self.errorLabel.text = error.localizedDescription
                 self.errorLabel.isHidden = false
                 return
             } else {
+            self.stopAnimating()
             self.dismiss(animated: true, completion: nil)
-           
+            
             }
         }
     }

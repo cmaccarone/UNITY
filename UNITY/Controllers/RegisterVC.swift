@@ -47,8 +47,10 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func registerButtonPressed(_ sender: Any) {
         if (passwordsAreSame()), emailField.text != nil, passwordField.text != nil, passwordVerifyField != nil {
+            startAnimating(size: .small)
             Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { (AuthResult, Error) in
                 if Error != nil {
+                    self.stopAnimating()
                     self.errorLabel.text = Error?.localizedDescription
                         self.errorLabel.isHidden = false
                     print(Error.debugDescription)
@@ -61,7 +63,7 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
                     DispatchQueue.global(qos: .userInteractive).async {
                         //TODO: add instance of user to the Firestore database. This list will hold the username/ID in which I will store info like their friend's list, friend requests, messaging ect.
                         DispatchQueue.main.async {
-                            //Main UI Thread
+                            self.stopAnimating()
                             self.performSegue(withIdentifier: "presentProjectsVC", sender: self)
                             return
                         }

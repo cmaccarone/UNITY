@@ -13,7 +13,7 @@ enum UserDefaultKeys: String {
 import UIKit
 import FirebaseAuth
 
-class SignInVC: UIViewController, UITextFieldDelegate {
+class SignInVC: UIViewController, UITextFieldDelegate  {
     //vars
     let user = User()
     let user1 = User()
@@ -30,17 +30,17 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInRegular(_ sender: Any) {
         if emailTextField.text != "", passwordTextField.text != "" {
-            addLoadingIconInMiddleOfScreen(startAnimating: true)
+            startAnimating(size: .small)
             Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
             if let error = error {
-                self.addLoadingIconInMiddleOfScreen(startAnimating: false)
+                self.stopAnimating()
                 self.errorLabel.isHidden = false
                 self.errorLabel.text = error.localizedDescription
             return
             }
             if result?.user.uid != nil {
                 
-                self.addLoadingIconInMiddleOfScreen(startAnimating: false)
+                self.stopAnimating()
         
                 self.performSegue(withIdentifier: "showProjectsVC", sender: self)
                 

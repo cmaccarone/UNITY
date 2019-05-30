@@ -25,16 +25,22 @@ extension UIViewController
     {
         view.endEditing(true)
     }
-    func addLoadingIconInMiddleOfScreen(startAnimating: Bool){
+   
+    
+    func startAnimating(size: LoadingViewSize){
+        
         let backView = UIView()
-        backView.isHidden = true
         let loadingView = UIActivityIndicatorView()
-        let backViewFrame = CGRect(x: self.view.frame.midX - 20, y: self.view.frame.midY - 20, width: 40, height: 40)
+        let theSize = size.rawValue
+        backView.isHidden = true
+        backView.tag = 996709
+        loadingView.tag = 996708
+        
+        let backViewFrame = CGRect(x: Double(self.view.frame.midX) - (theSize / 2), y: Double(self.view.frame.midY) - (theSize / 2), width: theSize, height: theSize)
         backView.frame = backViewFrame
         backView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        backView.layer.cornerRadius = 20
+        backView.layer.cornerRadius = CGFloat(theSize / 2)
         backView.alpha = 0.50
-        
         loadingView.hidesWhenStopped = true
         loadingView.style = .whiteLarge
         loadingView.center = self.view.center
@@ -42,21 +48,22 @@ extension UIViewController
         self.view.addSubview(loadingView)
         backView.isHidden = false
         loadingView.startAnimating()
+    }
+    
+    func stopAnimating() {
         
-        
-       
-        
-        
-        if startAnimating {
-            
-            
-            
-        } else if !startAnimating {
-            
-         
-//            backView.removeFromSuperview()
-            print("removed")
-        }
+        let loadingView = self.view.viewWithTag(996708) as! UIActivityIndicatorView
+        let backView = self.view.viewWithTag(996709)
+        loadingView.hidesWhenStopped = true
+        loadingView.stopAnimating()
+        backView?.removeFromSuperview()
+        loadingView.removeFromSuperview()
         
     }
+}
+
+enum LoadingViewSize : Double {
+    case small = 40
+    case medium = 80
+    case large = 120
 }
