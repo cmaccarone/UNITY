@@ -15,18 +15,14 @@ import FirebaseAuth
 class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
  
     
-
+    static var proPicture = #imageLiteral(resourceName: "ProfilePhoto") 
+    
     @IBOutlet weak var tableView: UITableView!
     //filler data
     
+    @IBOutlet weak var profileSettingsButton: RoundedProfileButton!
+    
 
-    @IBAction func signOutPressed(_ sender: Any) {
-                do {
-                    try Auth.auth().signOut()
-                } catch {
-                    print(error)
-                }
-    }
     
     
     //Project VC cell array.
@@ -34,6 +30,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
    
     
     fileprivate func setupTableView() {
+        profileSettingsButton.setBackgroundImage(ProjectVC.proPicture , for: .normal)
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = 70
         tableView.backgroundColor = .clear
