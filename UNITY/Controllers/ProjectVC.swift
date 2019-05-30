@@ -13,9 +13,6 @@ import FirebaseAuth
 
 
 class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
- 
-    
-    static var proPicture = #imageLiteral(resourceName: "ProfilePhoto") 
     
     @IBOutlet weak var tableView: UITableView!
     //filler data
@@ -30,7 +27,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
    
     
     fileprivate func setupTableView() {
-        profileSettingsButton.setBackgroundImage(ProjectVC.proPicture , for: .normal)
+        
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = 70
         tableView.backgroundColor = .clear

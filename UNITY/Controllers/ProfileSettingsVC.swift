@@ -7,33 +7,52 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profilePicture: RoundedProfileButton!
-    
     @IBOutlet weak var topView: UIView!
+    
     @IBAction func signOutPressed(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error)
+        }
     }
+    
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
+    //This Action presents an alert that lest the user choose how they will choose thier profile picture photo.
     @IBAction func changeProfilePicture(_ sender: Any) {
-        let image = UIImagePickerController()
-        image.delegate = self
-        image.sourceType = .camera
-        image.allowsEditing = true
-        self.present(image,animated: true){
-            //do something
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        let choosePictureSourcePopup = UIAlertController()
+        let cameraAction = UIAlertAction(title: "Take Picture", style: .default) { (takePic) in
+            picker.sourceType = .camera
+            self.present(picker,animated: true)
+            picker.showsCameraControls = true
         }
+        let photoLibraryAction = UIAlertAction(title: "Choose Photo", style: .default) { (choosePhoto) in
+            picker.sourceType = .photoLibrary
+            self.present(picker,animated: true)
+        }
+        choosePictureSourcePopup.addAction(cameraAction)
+        choosePictureSourcePopup.addAction(photoLibraryAction)
+        choosePictureSourcePopup.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        picker.allowsEditing = true
         
+        self.present(choosePictureSourcePopup, animated: true)
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.originalImage] as? UIImage {
-            ProjectVC.proPicture = image
+        if let image = info[.editedImage] as? UIImage {
+            //TODO: add image to firebase
             profilePicture.setBackgroundImage(image, for: .normal)
             
         }
@@ -46,7 +65,10 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
         topView.layer.borderWidth = 1
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        profilePicture.subviews.first?.contentMode = .scaleAspectFill
+    }
     /*
     // MARK: - Navigation
 
