@@ -9,11 +9,15 @@
 import UIKit
 import Firebase
 
+
 class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profilePicture: RoundedProfileButton!
     @IBOutlet weak var topView: UIView!
+    var profilePictureToUpload = UIImage()
+    let profilePictureRef = Storage.storage().reference().child("new/\(Auth.auth().currentUser!.uid)")
+    
     
     @IBAction func signOutPressed(_ sender: Any) {
         do {
@@ -53,7 +57,21 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage {
             //TODO: add image to firebase
+            profilePictureToUpload = image
             profilePicture.setBackgroundImage(image, for: .normal)
+            var data = Data()
+            data = Data()
+            data = image.jpegData(compressionQuality: 0.30)!
+         
+            let storageRef = Storage.storage().reference()
+            let uid = Auth.auth().currentUser!.uid
+            storageRef.child("new/\(uid)").putData(data, metadata: nil) { (nil, error) in
+                if let error = error {
+                    print(error)
+                }
+            }
+            
+            
             
         }
         dismiss(animated: true)
@@ -63,6 +81,17 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
         profilePicture.layer.borderWidth = 3
         topView.layer.borderColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
         topView.layer.borderWidth = 1
+        
+        //loads profile picture
+        profilePictureRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print(error)
+            } else {
+                // Data for "images/island.jpg" is returned
+                let image = UIImage(data: data!)
+                self.profilePicture.setImage(image, for: .normal)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

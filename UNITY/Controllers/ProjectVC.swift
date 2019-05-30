@@ -35,15 +35,33 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         tableView.reloadData()
     }
     
+    let profilePictureRef = Storage.storage().reference().child("new/\(Auth.auth().currentUser!.uid)")
+    var loadedPicture = UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         setupTableView()
         
+        //loads profile picture
+        profilePictureRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                print(error)
+            } else {
+                // Data for "images/island.jpg" is returned
+                let image = UIImage(data: data!)
+                self.profileSettingsButton.setImage(image, for: .normal)
+            }
+        }
         
     }
     
-    //projects
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+       profileSettingsButton.subviews.first?.contentMode = .scaleAspectFill
+    }
+//    projects
     
     var myProject = Project(name: "My Tasks")
     var officePro = Project(name: "Office Renovation")

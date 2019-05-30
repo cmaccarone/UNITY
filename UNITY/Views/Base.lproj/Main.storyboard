@@ -211,7 +211,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9c-t4-exr">
-                                <rect key="frame" x="121.5" y="42" width="132" height="47"/>
+                                <rect key="frame" x="122" y="42" width="131.5" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="S9c-t4-exr" secondAttribute="height" multiplier="132:47" id="8mz-xl-BPx"/>
                                 </constraints>
@@ -517,7 +517,6 @@
                                     <constraint firstAttribute="height" constant="50" id="Kvi-kh-AsQ"/>
                                     <constraint firstAttribute="width" constant="50" id="nrJ-PJ-mdn"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="ProfilePhoto"/>
                                 <connections>
                                     <segue destination="WDv-K0-Hec" kind="presentation" id="eyH-yM-cwP"/>
                                 </connections>
@@ -574,7 +573,6 @@
                                             <constraint firstAttribute="width" constant="100" id="gFc-EP-Tgd"/>
                                             <constraint firstAttribute="height" constant="100" id="qSr-uV-cQN"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="ProfilePhoto"/>
                                         <connections>
                                             <action selector="changeProfilePicture:" destination="WDv-K0-Hec" eventType="touchUpInside" id="gtH-p2-rbL"/>
                                         </connections>
@@ -648,7 +646,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esv-k5-bTs">
-                                <rect key="frame" x="120.5" y="114" width="134" height="47"/>
+                                <rect key="frame" x="124.5" y="114" width="126" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="96R-1C-84i"/>
                                 </constraints>
@@ -730,7 +728,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WI-5Me">
-                                <rect key="frame" x="146.5" y="195.5" width="82.5" height="20.5"/>
+                                <rect key="frame" x="151" y="197.5" width="73.5" height="18.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0cd-WI-5Me" secondAttribute="height" multiplier="4:1" id="oFr-vr-YyA"/>
                                 </constraints>
@@ -887,7 +885,6 @@
         <image name="Artboard" width="90" height="83"/>
         <image name="Checkbox_unchecked" width="20" height="20"/>
         <image name="Logo2 " width="362" height="172"/>
-        <image name="ProfilePhoto" width="578" height="595"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eRn-qF-Ibe"/>
