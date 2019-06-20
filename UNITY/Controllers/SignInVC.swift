@@ -11,13 +11,16 @@ enum UserDefaultKeys: String {
 }
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
 class SignInVC: UIViewController, UITextFieldDelegate  {
     //vars
     let user = User()
     let user1 = User()
-   
+    
+    let userImage = "profilePic.jpg"
+    
     var placeHolder: String?
     //outlets/Actions
     @IBOutlet weak var errorLabel: UILabel!
@@ -28,10 +31,13 @@ class SignInVC: UIViewController, UITextFieldDelegate  {
     @IBAction func signInWithTouchID(_ sender: Any) {
     }
     
+    
+    
     @IBAction func signInRegular(_ sender: Any) {
         if emailTextField.text != "", passwordTextField.text != "" {
             startAnimating(size: .small)
             Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+                
             if let error = error {
                 self.stopAnimating()
                 self.errorLabel.isHidden = false
@@ -39,7 +45,17 @@ class SignInVC: UIViewController, UITextFieldDelegate  {
             return
             }
             if result?.user.uid != nil {
-                
+                let profilePictureRef = Storage.storage().reference().child("new/\(Auth.auth().currentUser!.uid)")
+                profilePictureRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                    if let error = error {
+                        print(error)
+                        self.saveImage(image: #imageLiteral(resourceName: "ProfilePhoto"), named: self.userImage)
+                    } else {
+                        // Data for "images/island.jpg" is returned
+                        let image = UIImage(data: data!)
+                        self.saveImage(image: image ?? #imageLiteral(resourceName: "ProfilePhoto"), named: self.userImage)
+                    }
+                }
                 self.stopAnimating()
         
                 self.performSegue(withIdentifier: "showProjectsVC", sender: self)
@@ -58,6 +74,7 @@ class SignInVC: UIViewController, UITextFieldDelegate  {
         self.hideKeyboard()
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
     }
     
     

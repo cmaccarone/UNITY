@@ -251,13 +251,13 @@
                                                             <rect key="frame" x="50" y="10" width="164" height="45.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" text="Task Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="r60-Pa-S1c">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="27"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fph-3b-rAb">
-                                                                    <rect key="frame" x="0.0" y="26" width="164" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="29" width="164" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-LightItalic" family="Open Sans" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -340,13 +340,13 @@
                                                             <rect key="frame" x="50" y="10" width="164" height="45.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" text="Task Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Tee-TJ-eho">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="27"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-pE-MoI">
-                                                                    <rect key="frame" x="0.0" y="26" width="164" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="29" width="164" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-LightItalic" family="Open Sans" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -429,13 +429,13 @@
                                                             <rect key="frame" x="50" y="10" width="164" height="45.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" text="Task Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="1Fd-OC-gJv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="27"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="axr-KS-9aL">
-                                                                    <rect key="frame" x="0.0" y="26" width="164" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="29" width="164" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-LightItalic" family="Open Sans" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -511,7 +511,7 @@
                                     <color key="titleColor" red="0.26666666666666666" green="0.33725490196078434" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxt-ln-rJf" customClass="RoundedProfileButton" customModule="UNITY" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxt-ln-rJf" customClass="RoundedProfileButton" customModule="UNITY" customModuleProvider="target">
                                 <rect key="frame" x="318.5" y="40.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Kvi-kh-AsQ"/>
@@ -646,7 +646,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esv-k5-bTs">
-                                <rect key="frame" x="124.5" y="114" width="126" height="47"/>
+                                <rect key="frame" x="120.5" y="114" width="134" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="96R-1C-84i"/>
                                 </constraints>
@@ -728,7 +728,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WI-5Me">
-                                <rect key="frame" x="151" y="197.5" width="73.5" height="18.5"/>
+                                <rect key="frame" x="146.5" y="195.5" width="82.5" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0cd-WI-5Me" secondAttribute="height" multiplier="4:1" id="oFr-vr-YyA"/>
                                 </constraints>

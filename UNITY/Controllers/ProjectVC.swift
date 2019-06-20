@@ -14,6 +14,8 @@ import FirebaseAuth
 
 class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     
+    let userImage = "profilePic.jpg"
+    
     @IBOutlet weak var tableView: UITableView!
     //filler data
     
@@ -40,26 +42,18 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileSettingsButton.subviews.first?.contentMode = .scaleAspectFill
+        profileSettingsButton.setImage(getSavedImage(named: userImage), for: .normal)
         loadData()
         setupTableView()
-        
-        //loads profile picture
-        profilePictureRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                print(error)
-            } else {
-                // Data for "images/island.jpg" is returned
-                let image = UIImage(data: data!)
-                self.profileSettingsButton.setImage(image, for: .normal)
-            }
-        }
-        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
        profileSettingsButton.subviews.first?.contentMode = .scaleAspectFill
+        profileSettingsButton.setImage(getSavedImage(named: userImage), for: .normal)
     }
 //    projects
     

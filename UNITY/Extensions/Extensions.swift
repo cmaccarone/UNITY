@@ -60,6 +60,29 @@ extension UIViewController
         loadingView.removeFromSuperview()
         
     }
+    
+    func saveImage(image: UIImage,named: String) {
+        guard let data = image.jpegData(compressionQuality: 1) else {
+            return
+        }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+           return
+        }
+        do {
+            try data.write(to: directory.appendingPathComponent(named)!)
+            
+        } catch {
+            print(error.localizedDescription)
+            
+        }
+    }
+    
+    func getSavedImage(named: String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+    }
 }
 
 enum LoadingViewSize : Double {
