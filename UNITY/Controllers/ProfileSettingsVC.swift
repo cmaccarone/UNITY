@@ -11,7 +11,7 @@ import Firebase
 
 
 class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
+    let profilePictureName = "profilePic.png"
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profilePicture: RoundedProfileButton!
     @IBOutlet weak var topView: UIView!
@@ -56,20 +56,22 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage {
-            //TODO: add image to firebase
             profilePictureToUpload = image
             profilePicture.setBackgroundImage(image, for: .normal)
+            print("Image Saved:\(saveImage(image:image,name: profilePictureName))")
             var data = Data()
             data = Data()
             data = image.jpegData(compressionQuality: 0.30)!
          
             let storageRef = Storage.storage().reference()
             let uid = Auth.auth().currentUser!.uid
-            storageRef.child("new/\(uid)").putData(data, metadata: nil) { (nil, error) in
+            storageRef.child("new/\(uid)").putData(data, metadata: nil) { (nil,error) in
                 if let error = error {
                     print(error)
                 }
             }
+            
+            
             
             
             
@@ -83,29 +85,24 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
         topView.layer.borderWidth = 1
         
         //loads profile picture
-        profilePictureRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                print(error)
-            } else {
-                // Data for "images/island.jpg" is returned
-                let image = UIImage(data: data!)
-                self.profilePicture.setImage(image, for: .normal)
+        DispatchQueue.global(qos: .userInteractive).async {
+            //Background Thread
+            DispatchQueue.main.async {
+                self.profilePicture.setImage(self.getSavedImage(named: self.profilePictureName), for: .normal)
             }
         }
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         profilePicture.subviews.first?.contentMode = .scaleAspectFill
     }
-    /*
-    // MARK: - Navigation
+   
+    
+    
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
 
 }

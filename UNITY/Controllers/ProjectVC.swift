@@ -14,17 +14,20 @@ import FirebaseAuth
 
 class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
-    //filler data
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileSettingsButton: RoundedProfileButton!
     
 
     
     
     //Project VC cell array.
-   
-   
+    let profilePictureName = "profilePic.png"
+    let projects = [Project]()
+    let tasks = [Task]()
     
     fileprivate func setupTableView() {
         
@@ -40,20 +43,10 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         setupTableView()
         
         //loads profile picture
-        profilePictureRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                print(error)
-            } else {
-                // Data for "images/island.jpg" is returned
-                let image = UIImage(data: data!)
-                self.profileSettingsButton.setImage(image, for: .normal)
-            }
-        }
-        
+       profileSettingsButton.setImage(getSavedImage(named: profilePictureName) ?? #imageLiteral(resourceName: "ProfilePhoto"), for: .normal)
     }
     
     
@@ -63,40 +56,10 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     }
 //    projects
     
-    var myProject = Project(name: "My Tasks")
-    var officePro = Project(name: "Office Renovation")
-    var marketingPro = Project(name: "Marketing")
-    var accountingPro = Project(name: "Accounting")
-    var webDev = Project(name: "Website Development")
-    var appDev = Project(name: "App Development")
-    var projects = [Project]()
+    
     
     //tasks
-    
-    var task1 = Task(name: "Walk The Dog", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .incomplete, delegatedUsers: [nil])
-    var task2 = Task(name: "take out trash", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .incomplete, delegatedUsers: [nil])
-    var task3 = Task(name: "call Jerry", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .incomplete, delegatedUsers: [nil])
-    var task4 = Task(name: "mail packages", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .completed, delegatedUsers: [nil])
-    var task5 = Task(name: "go to store", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .completed, delegatedUsers: [nil])
-    var task6 = Task(name: "buy lights", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .completed, delegatedUsers: [nil])
-    var myTasks = [Task]()
-    var completed = [Task]()
-    
-    // sample data for now.
-    func loadData(){
-        projects.append(myProject)
-        projects.append(officePro)
-        projects.append(marketingPro)
-        projects.append(accountingPro)
-        projects.append(webDev)
-        projects.append(appDev)
-        myTasks.append(task1)
-        myTasks.append(task2)
-        myTasks.append(task3)
-        completed.append(task4)
-        completed.append(task5)
-        completed.append(task6)
-    }
+
     
     //Mark: add project to projects array.
     func addProject() {
@@ -115,13 +78,13 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         if editingStyle == .delete
         {
         if indexPath.section == 0 {
-            self.myTasks.remove(at: indexPath.row)
+     //       self.myTasks.remove(at: indexPath.row)
             tableView.reloadData()
         } else if indexPath.section == 1 {
-            self.projects.remove(at: indexPath.row)
+     //       self.projects.remove(at: indexPath.row)
             tableView.reloadData()
         } else {
-            self.completed.remove(at: indexPath.row)
+       //     self.completed.remove(at: indexPath.row)
             tableView.reloadData()
             }}
     }
@@ -134,12 +97,12 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         let delete = SwipeAction(style: .destructive, title: nil) { (delete, indexPath) in
             
             if indexPath.section == 0 {
-                self.myTasks.remove(at: indexPath.row)
+         //       self.myTasks.remove(at: indexPath.row)
             } else if indexPath.section == 1 {
                 //TODO: add segue to warning prompt "Project is about to be deleted would you like to continue?"
-                self.projects.remove(at: indexPath.row)
+         //       self.projects.remove(at: indexPath.row)
             } else {
-                self.completed.remove(at: indexPath.row)
+          //      self.completed.remove(at: indexPath.row)
             }
         }
         
@@ -194,14 +157,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
-            return myTasks.count
-        } else if section == 1 {
-            return projects.count
-        } else {
-            return completed.count
-        }
-        
+        return 0
        
     }
     
@@ -217,7 +173,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             cell.delegate = self
             cell.contentView.backgroundColor = .clear
             tableView.backgroundColor = .clear
-            cell.taskName.text = myTasks[indexPath.row].name
+           // cell.taskName.text = myTasks[indexPath.row].name
             cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
             cell.projectTeam.text = "team Name"
             return cell
@@ -228,7 +184,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             cell.delegate = self
             cell.contentView.backgroundColor = .clear
             tableView.backgroundColor = .clear
-            cell.taskName.text = projects[indexPath.row].name
+           // cell.taskName.text = projects[indexPath.row].name
             cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
             cell.projectTeam.text = "team Name"
             return cell
@@ -237,7 +193,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             cell.delegate = self
             cell.contentView.backgroundColor = .clear
             tableView.backgroundColor = .clear
-            cell.taskName.text = completed[indexPath.row].name
+          //  cell.taskName.text = completed[indexPath.row].name
             cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
             cell.projectTeam.text = "team Name"
             return cell
