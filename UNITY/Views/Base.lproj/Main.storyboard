@@ -211,7 +211,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projects" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9c-t4-exr">
-                                <rect key="frame" x="122" y="42" width="131.5" height="47"/>
+                                <rect key="frame" x="121.5" y="42" width="132" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="S9c-t4-exr" secondAttribute="height" multiplier="132:47" id="8mz-xl-BPx"/>
                                 </constraints>
@@ -251,13 +251,13 @@
                                                             <rect key="frame" x="50" y="10" width="164" height="45.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" text="Task Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="r60-Pa-S1c">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="27"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="24"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fph-3b-rAb">
-                                                                    <rect key="frame" x="0.0" y="29" width="164" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="26" width="164" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-LightItalic" family="Open Sans" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -340,13 +340,13 @@
                                                             <rect key="frame" x="50" y="10" width="164" height="45.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" text="Task Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Tee-TJ-eho">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="27"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="24"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-pE-MoI">
-                                                                    <rect key="frame" x="0.0" y="29" width="164" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="26" width="164" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-LightItalic" family="Open Sans" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -429,13 +429,13 @@
                                                             <rect key="frame" x="50" y="10" width="164" height="45.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" text="Task Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="1Fd-OC-gJv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="27"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="24"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-ExtraBold" family="Open Sans" pointSize="15"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Due Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="axr-KS-9aL">
-                                                                    <rect key="frame" x="0.0" y="29" width="164" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="26" width="164" height="19.5"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-LightItalic" family="Open Sans" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -506,8 +506,8 @@
                                     <constraint firstAttribute="width" constant="50" id="Ll0-JL-MST"/>
                                     <constraint firstAttribute="height" constant="50" id="eKq-oS-23e"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="45"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="38"/>
+                                <state key="normal" title="+">
                                     <color key="titleColor" red="0.26666666666666666" green="0.33725490196078434" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -548,6 +548,7 @@
                         <viewLayoutGuide key="safeArea" id="CH7-cQ-mep"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="ubE-Dv-lna" id="ZWN-eH-sOf"/>
                         <outlet property="profileSettingsButton" destination="Oxt-ln-rJf" id="wSb-lJ-Wb4"/>
                         <outlet property="tableView" destination="3PE-Pj-cGJ" id="d4d-w8-odF"/>
                         <segue destination="VLs-gt-49R" kind="show" identifier="showTask" id="E19-y9-85x"/>
@@ -1184,8 +1185,8 @@
                                     <constraint firstAttribute="height" constant="50" id="Pny-mb-xVe"/>
                                     <constraint firstAttribute="width" constant="50" id="QZo-wa-4ps"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="45"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="38"/>
+                                <state key="normal" title="+">
                                     <color key="titleColor" red="0.2666666667" green="0.33725490200000002" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -1223,13 +1224,14 @@
                         <viewLayoutGuide key="safeArea" id="w8b-kP-dUp"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="lqz-Z8-6Tq" id="TPg-nd-LBH"/>
                         <outlet property="profileSettingsButton" destination="oAe-l3-Y9E" id="5l2-42-emJ"/>
                         <outlet property="tableView" destination="F7m-XZ-HrU" id="emE-Ud-LfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cU5-HE-0Sw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="874"/>
+            <point key="canvasLocation" x="1312.8" y="873.91304347826099"/>
         </scene>
     </scenes>
     <resources>

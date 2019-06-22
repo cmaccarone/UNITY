@@ -20,6 +20,7 @@ class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Swip
     // var tasks = [Task]()
     
     
+    @IBOutlet weak var addButton: RoundedPlusButton!
     @IBOutlet weak var tableView: UITableView!
     //filler data
     
@@ -52,6 +53,7 @@ class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Swip
     
     override func viewWillLayoutSubviews() {
         profileSettingsButton.subviews.first?.contentMode = .scaleAspectFill
+        addButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
     }
     
     
