@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 
+
 class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -18,12 +19,13 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
     
     var profilePictureToUpload = UIImage()
     let profilePictureRef = Storage.storage().reference().child("new/\(Auth.auth().currentUser!.uid)")
-    let userImage = "profilePic.jpg"
+
     //Mark: Actions
     
     @IBAction func signOutPressed(_ sender: Any) {
         do {
             try Auth.auth().signOut()
+            
         } catch {
             print(error)
         }
@@ -55,6 +57,31 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
         self.present(choosePictureSourcePopup, animated: true)
     }
     
+    
+    // Mark: LifeCycle Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        profilePicture.layer.borderWidth = 3
+        topView.layer.borderColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
+        topView.layer.borderWidth = 1
+        profilePicture.subviews.first?.contentMode = .scaleAspectFill
+        profilePicture.setImage(getSavedImage(named: User.profilePicture), for: .normal)
+        nameLabel.text = Auth.auth().currentUser?.email
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        profilePicture.subviews.first?.contentMode = .scaleAspectFill
+        profilePicture.setImage(getSavedImage(named: User.profilePicture), for: .normal)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        deleteImage(named: User.profilePicture)
+    }
+    
+    
     //Mark: Methods
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -69,7 +96,7 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
             let storageRef = Storage.storage().reference()
             let uid = Auth.auth().currentUser!.uid
             
-            self.saveImage(image: image, named: self.userImage)
+            self.saveImage(image: image, named: User.profilePicture)
             storageRef.child("new/\(uid)").putData(data, metadata: nil) { (nil, error) in
             if let error = error {
                 print(error)
@@ -84,22 +111,8 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
         dismiss(animated: true)
     }
     
-    // Mark: LifeCycle Methods
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        profilePicture.layer.borderWidth = 3
-        topView.layer.borderColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
-        topView.layer.borderWidth = 1
-        profilePicture.subviews.first?.contentMode = .scaleAspectFill
-        profilePicture.setImage(getSavedImage(named: userImage), for: .normal)
-    }
-        
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        profilePicture.subviews.first?.contentMode = .scaleAspectFill
-        profilePicture.setImage(getSavedImage(named: userImage), for: .normal)
-    }
+    
         
 //      //loads profile picture
 //        profilePictureRef.getData(maxSize: 1 * 1024 * 1024) { data, error in

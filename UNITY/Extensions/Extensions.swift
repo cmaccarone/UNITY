@@ -61,11 +61,22 @@ extension UIViewController
         
     }
     
+    func deleteImage(named: String) {
+        if let directory = try? FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            do {
+                try FileManager.default.removeItem(at: URL(fileURLWithPath: directory.absoluteString).appendingPathComponent(named))
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+    
     func saveImage(image: UIImage,named: String) {
         guard let data = image.jpegData(compressionQuality: 1) else {
             return
         }
-        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+        guard let directory = try? FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true) as NSURL else {
            return
         }
         do {
@@ -78,7 +89,7 @@ extension UIViewController
     }
     
     func getSavedImage(named: String) -> UIImage? {
-        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+        if let dir = try? FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
             return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
         }
         return nil

@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct User: Hashable,Equatable {
+class User {
+    
+    /// holds a global name for the user profile picture
+    
+    static let profilePicture = "profilePic.jpg"
     var name:String?
     var email:String?
     var userType:UserType?

@@ -15,6 +15,7 @@
 		1B3F7AA52273B467002B6E7A /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F7AA42273B467002B6E7A /* RoundedButton.swift */; };
 		1B668BCA22756825008153B8 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B668BC922756825008153B8 /* RegisterVC.swift */; };
 		1B668BCC2276B25F008153B8 /* ResetPasswordVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B668BCB2276B25F008153B8 /* ResetPasswordVC1.swift */; };
+		1B69F48122BE767800D8FD59 /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B69F48022BE767800D8FD59 /* TaskVC.swift */; };
 		1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B891A5722739CA0000B552B /* RoundedTextField.swift */; };
 		1B98F6A72279F0BB00F0C7BA /* ProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */; };
 		1B98F6A92279F23700F0C7BA /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98F6A82279F23700F0C7BA /* Project.swift */; };
@@ -54,6 +55,7 @@
 		1B3F7AA42273B467002B6E7A /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		1B668BC922756825008153B8 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		1B668BCB2276B25F008153B8 /* ResetPasswordVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC1.swift; sourceTree = "<group>"; };
+		1B69F48022BE767800D8FD59 /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		1B891A5722739CA0000B552B /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVC.swift; sourceTree = "<group>"; };
 		1B98F6A82279F23700F0C7BA /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				1B668BCB2276B25F008153B8 /* ResetPasswordVC1.swift */,
 				1B98F6A62279F0BB00F0C7BA /* ProjectVC.swift */,
 				1B1A9D4C22A058F500E9E01F /* ProfileSettingsVC.swift */,
+				1B69F48022BE767800D8FD59 /* TaskVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				1B98F6E4227D335E00F0C7BA /* User.swift in Sources */,
 				1B1A9D45229DE3BA00E9E01F /* Extensions.swift in Sources */,
 				1BA0F8FA227379CF007A483C /* SignInVC.swift in Sources */,
+				1B69F48122BE767800D8FD59 /* TaskVC.swift in Sources */,
 				1B891A5822739CA0000B552B /* RoundedTextField.swift in Sources */,
 				1B2CCE8F228695EB002714F2 /* CompletedTableViewCell.swift in Sources */,
 				1B98F6EE22828DC600F0C7BA /* RoundedPlusButton.swift in Sources */,

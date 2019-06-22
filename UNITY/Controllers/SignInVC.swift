@@ -19,7 +19,6 @@ class SignInVC: UIViewController, UITextFieldDelegate  {
     let user = User()
     let user1 = User()
     
-    let userImage = "profilePic.jpg"
     
     var placeHolder: String?
     //outlets/Actions
@@ -45,20 +44,29 @@ class SignInVC: UIViewController, UITextFieldDelegate  {
             return
             }
             if result?.user.uid != nil {
-                let profilePictureRef = Storage.storage().reference().child("new/\(Auth.auth().currentUser!.uid)")
-                profilePictureRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                    if let error = error {
-                        print(error)
-                        self.saveImage(image: #imageLiteral(resourceName: "ProfilePhoto"), named: self.userImage)
-                    } else {
-                        // Data for "images/island.jpg" is returned
-                        let image = UIImage(data: data!)
-                        self.saveImage(image: image ?? #imageLiteral(resourceName: "ProfilePhoto"), named: self.userImage)
+                    let profilePictureRef = Storage.storage().reference().child("new/\(Auth.auth().currentUser!.uid)")
+                    profilePictureRef.getData(maxSize: 1 * 1024 * 1024) { photo, error in
+                        if let error = error {
+                            print(error)
+                            self.saveImage(image: #imageLiteral(resourceName: "ProfilePhoto"), named: User.profilePicture)
+                            self.stopAnimating()
+                            self.performSegue(withIdentifier: "showProjectsVC", sender: self)
+                        } else {
+                            
+                                //Main UI Thread
+                                // Data for "images/island.jpg" is returned
+                                let image = UIImage(data: photo!)
+                                self.saveImage(image: image ?? #imageLiteral(resourceName: "ProfilePhoto"), named: User.profilePicture)
+                                self.stopAnimating()
+                                self.performSegue(withIdentifier: "showProjectsVC", sender: self)
+                            
+                            
+                        }
                     }
-                }
-                self.stopAnimating()
-        
-                self.performSegue(withIdentifier: "showProjectsVC", sender: self)
+                    
+                
+                
+                
                 
             }
         }

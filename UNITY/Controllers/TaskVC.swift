@@ -1,8 +1,8 @@
 //
-//  ProjectVC.swift
+//  TaskVC.swift
 //  UNITY
 //
-//  Created by Caleb Maccarone on 5/1/19.
+//  Created by Caleb Maccarone on 6/22/19.
 //  Copyright © 2019 Caleb Maccarone. All rights reserved.
 //
 
@@ -11,26 +11,26 @@ import Firebase
 import SwipeCellKit
 import FirebaseAuth
 
-
-class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
+class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     
     
-    let profilePictureRef = Storage.storage().reference().child("new/\(Auth.auth().currentUser!.uid)")
-    var loadedPicture = UIImage()
+    private let profilePictureRef = Storage.storage().reference().child("new/\(Auth.auth().currentUser!.uid)")
+    private var loadedPicture = UIImage()
+    // TODO: add data model that will hold task objects
+    // var tasks = [Task]()
     
     
- 
     @IBOutlet weak var tableView: UITableView!
     //filler data
     
     @IBOutlet weak var profileSettingsButton: RoundedProfileButton!
     
-
+    
     
     
     //Project VC cell array.
-   
-   
+    
+    
     
     fileprivate func setupTableView() {
         
@@ -44,7 +44,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         
         loadData()
         setupTableView()
@@ -61,7 +61,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         profileSettingsButton.setImage(getSavedImage(named: User.profilePicture), for: .normal)
         
     }
-//    projects
+    //    projects
     
     var myProject = Project(name: "My Tasks")
     var officePro = Project(name: "Office Renovation")
@@ -114,15 +114,15 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete
         {
-        if indexPath.section == 0 {
-            self.myTasks.remove(at: indexPath.row)
-            tableView.reloadData()
-        } else if indexPath.section == 1 {
-            self.projects.remove(at: indexPath.row)
-            tableView.reloadData()
-        } else {
-            self.completed.remove(at: indexPath.row)
-            tableView.reloadData()
+            if indexPath.section == 0 {
+                self.myTasks.remove(at: indexPath.row)
+                tableView.reloadData()
+            } else if indexPath.section == 1 {
+                self.projects.remove(at: indexPath.row)
+                tableView.reloadData()
+            } else {
+                self.completed.remove(at: indexPath.row)
+                tableView.reloadData()
             }}
     }
     
@@ -152,7 +152,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         settings.image = #imageLiteral(resourceName: "Settings Item Button")
         return [delete,settings]
     }
-  
+    
     
     
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
@@ -165,7 +165,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         return options
     }
     
-
+    
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionTitles = ["My Tasks","Projects","Completed"]
@@ -186,11 +186,11 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sectionTitles = ["My Tasks","Projects","Completed"]
-    
+        
         return sectionTitles[section]
     }
-  
-
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -202,7 +202,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             return completed.count
         }
         
-       
+        
     }
     
     
@@ -249,7 +249,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     }
     
     
-
+    
     
     
 }

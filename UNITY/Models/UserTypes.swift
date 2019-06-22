@@ -9,7 +9,7 @@
 import Foundation
 
 enum UserType {
-    case superUser
+    case admin
     case projectManager
     case teamMember
 }
