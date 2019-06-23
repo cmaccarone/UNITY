@@ -1233,6 +1233,68 @@
             </objects>
             <point key="canvasLocation" x="974" y="851"/>
         </scene>
+        <!--Add StuffVC-->
+        <scene sceneID="sVB-RC-wu3">
+            <objects>
+                <viewController id="rey-qk-iko" customClass="AddStuffVC" customModule="UNITY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LYC-sr-yAX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zbs-g9-irx">
+                                <rect key="frame" x="0.0" y="63" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="pRQ-nm-FaC"/>
+                                    <constraint firstAttribute="height" constant="40" id="t0i-Cf-UoG"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Project"/>
+                                    <segment title="Task"/>
+                                </segments>
+                                <color key="tintColor" red="0.57647058819999997" green="0.88235294119999996" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="typeSelected:" destination="rey-qk-iko" eventType="valueChanged" id="igs-zg-5Ld"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ea6-PV-pCs">
+                                <rect key="frame" x="13" y="25" width="54" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qav-L9-ooA">
+                                <rect key="frame" x="139" y="157" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8w-uH-slA">
+                                <rect key="frame" x="147" y="232" width="81" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create Task"/>
+                                <connections>
+                                    <action selector="createPushed:" destination="rey-qk-iko" eventType="touchUpInside" id="CdH-24-Ap9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21176470589999999" green="0.23137254900000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zbs-g9-irx" firstAttribute="trailing" secondItem="oYj-a1-qoR" secondAttribute="trailing" id="0Bc-Ch-mmQ"/>
+                            <constraint firstItem="Zbs-g9-irx" firstAttribute="leading" secondItem="oYj-a1-qoR" secondAttribute="leading" id="S01-t6-UVN"/>
+                            <constraint firstItem="Zbs-g9-irx" firstAttribute="top" secondItem="oYj-a1-qoR" secondAttribute="top" constant="43" id="cst-GL-vuh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oYj-a1-qoR"/>
+                    </view>
+                    <connections>
+                        <outlet property="createButton" destination="i8w-uH-slA" id="x2a-R9-2lt"/>
+                        <outlet property="nameField" destination="qav-L9-ooA" id="yHV-U3-78m"/>
+                        <outlet property="segmentedControl" destination="Zbs-g9-irx" id="Dls-gf-Qcp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lxo-Y1-soA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5999999999999" y="836.13193403298362"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Arrow round left" width="35" height="35"/>
