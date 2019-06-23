@@ -52,6 +52,7 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         profileSettingsButton.subviews.first?.contentMode = .scaleAspectFill
         addButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
     }

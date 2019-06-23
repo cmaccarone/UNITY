@@ -25,7 +25,7 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
     @IBAction func signOutPressed(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            
+            deleteImage(named: User.profilePicture)
         } catch {
             print(error)
         }
@@ -65,7 +65,6 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
         profilePicture.layer.borderWidth = 3
         topView.layer.borderColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
         topView.layer.borderWidth = 1
-        profilePicture.subviews.first?.contentMode = .scaleAspectFill
         profilePicture.setImage(getSavedImage(named: User.profilePicture), for: .normal)
         nameLabel.text = Auth.auth().currentUser?.email
     }
@@ -77,9 +76,7 @@ class ProfileSettingsVC: UIViewController, UINavigationControllerDelegate, UIIma
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        deleteImage(named: User.profilePicture)
-    }
+   
     
     
     //Mark: Methods
