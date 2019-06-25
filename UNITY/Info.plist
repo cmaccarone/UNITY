@@ -40,6 +40,10 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>The app needs your permission to use the camera.</string>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
+	<key>FIRAnalyticsDebugEnabled</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

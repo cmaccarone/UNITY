@@ -10,28 +10,126 @@ import UIKit
 import Firebase
 import SwipeCellKit
 import FirebaseAuth
+import CoreData
 
 class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     
+    //MARK: - Class Properties
+    var myTasks = [Tasks]()
+    var tasks = [Tasks]()
+    var completedTasks = [Tasks]()
     
+    var selectedProject: Projects? {didSet {loadData()}}
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     private let profilePictureRef = Storage.storage().reference().child("new/\(Auth.auth().currentUser!.uid)")
     private var loadedPicture = UIImage()
     // TODO: add data model that will hold task objects
     // var tasks = [Task]()
     
+    //MARK: - IBOutlets
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addButton: RoundedPlusButton!
     @IBOutlet weak var tableView: UITableView!
-    //filler data
-    
     @IBOutlet weak var profileSettingsButton: RoundedProfileButton!
     
+    //MARK: - IBActions
+    
+    @IBAction func backPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+
+    
+    //MARK: - LifeCycle Methods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as? AddStuffVC
+        destinationVC?.labelText = "Add Task"
+        destinationVC?.dataCreationType = .Task
+        destinationVC?.selectedProject = selectedProject
+    }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyboard()
+        titleLabel.text = selectedProject?.projectName?.uppercased()
+        loadData()
+        setupTableView()
+        
+        
+    }
     
-    //Project VC cell array.
+    override func viewWillLayoutSubviews() {
+        profileSettingsButton.subviews.first?.contentMode = .scaleAspectFill
+        addButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
+    }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        profileSettingsButton.setImage(getSavedImage(named: User.profilePicture), for: .normal)
+        loadData()
+        tableView.reloadData()
+        
+    }
+   
+    
+    //MARK: - Database Methods
+    
+    func saveContext(){
+        do {
+            try context.save()
+        } catch {
+            print("error: \(error)")
+        }
+        tableView.reloadData()
+    }
+    
+    func loadData() {
+        //Load Projects Array
+        let request: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+        let tasks1 = NSPredicate(format: "myTask != %@", NSNumber(booleanLiteral: true))
+        let tasks2 = NSPredicate(format: "done != %@", NSNumber(booleanLiteral: true))
+        let tasks3 = NSPredicate(format: "parentProject.projectName == %@", selectedProject!.projectName!)
+        let compound = NSCompoundPredicate(andPredicateWithSubpredicates: [tasks1, tasks2,tasks3])
+        request.predicate = compound
+        do {
+        tasks = try context.fetch(request)
+        } catch {
+            print("error fetching data : \(error)")
+        }
+        //Load Finished Tasks Array
+        let request2: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+        let task = NSPredicate(format: "done == %@", NSNumber(booleanLiteral: true))
+        let task2 = NSPredicate(format: "parentProject.projectName == %@", selectedProject!.projectName!)
+        let compound0 = NSCompoundPredicate(andPredicateWithSubpredicates: [task, task2])
+        request2.predicate = compound0
+        do {
+            completedTasks = try context.fetch(request2)
+        } catch {
+            print("error fetching data : \(error)")
+        }
+        
+        // Load MyTasks Array
+        let request3: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+        let myTasks = NSPredicate(format: "myTask = %@", NSNumber(booleanLiteral: true))
+        let myTasks2 = NSPredicate(format: "done != %@", NSNumber(booleanLiteral: true))
+        let mytasks4 = NSPredicate(format: "parentProject.projectName == %@", selectedProject!.projectName!)
+        let compound2 = NSCompoundPredicate(andPredicateWithSubpredicates: [myTasks, myTasks2,mytasks4])
+        request3.predicate = compound2
+        do {
+            self.myTasks = try context.fetch(request3)
+            
+        } catch {
+            print("error fetching data : \(error)")
+        }
+    }
+   
+    //MARK: - TableView Methods
+    
+
+
     
     fileprivate func setupTableView() {
         
@@ -41,71 +139,6 @@ class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Swip
         tableView.separatorStyle = .none
         tableView.reloadData()
     }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        loadData()
-        setupTableView()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        profileSettingsButton.subviews.first?.contentMode = .scaleAspectFill
-        addButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 4, right: 0)
-    }
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        profileSettingsButton.setImage(getSavedImage(named: User.profilePicture), for: .normal)
-        
-    }
-    //    projects
-    
-    var myProject = Project(name: "My Tasks")
-    var officePro = Project(name: "Office Renovation")
-    var marketingPro = Project(name: "Marketing")
-    var accountingPro = Project(name: "Accounting")
-    var webDev = Project(name: "Website Development")
-    var appDev = Project(name: "App Development")
-    var projects = [Project]()
-    
-    //tasks
-    
-    var task1 = Task(name: "Walk The Dog", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .incomplete, delegatedUsers: [nil])
-    var task2 = Task(name: "take out trash", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .incomplete, delegatedUsers: [nil])
-    var task3 = Task(name: "call Jerry", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .incomplete, delegatedUsers: [nil])
-    var task4 = Task(name: "mail packages", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .completed, delegatedUsers: [nil])
-    var task5 = Task(name: "go to store", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .completed, delegatedUsers: [nil])
-    var task6 = Task(name: "buy lights", dueDate: nil, reminderDate: nil, reminderTime: nil, taskType: .myTask, taskState: .completed, delegatedUsers: [nil])
-    var myTasks = [Task]()
-    var completed = [Task]()
-    
-    // sample data for now.
-    func loadData(){
-        projects.append(myProject)
-        projects.append(officePro)
-        projects.append(marketingPro)
-        projects.append(accountingPro)
-        projects.append(webDev)
-        projects.append(appDev)
-        myTasks.append(task1)
-        myTasks.append(task2)
-        myTasks.append(task3)
-        completed.append(task4)
-        completed.append(task5)
-        completed.append(task6)
-    }
-    
-    //Mark: add project to projects array.
-    func addProject() {
-        
-    }
-    
-    //Mark: Table View Delegate/Datasource
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .clear
@@ -117,18 +150,36 @@ class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Swip
         if editingStyle == .delete
         {
             if indexPath.section == 0 {
-                self.myTasks.remove(at: indexPath.row)
+            context.delete(myTasks[indexPath.row])
+            self.myTasks.remove(at: indexPath.row)
                 tableView.reloadData()
             } else if indexPath.section == 1 {
-                self.projects.remove(at: indexPath.row)
+                context.delete(tasks[indexPath.row])
+                self.tasks.remove(at: indexPath.row)
                 tableView.reloadData()
             } else {
-                self.completed.remove(at: indexPath.row)
+                context.delete(completedTasks[indexPath.row])
+                self.completedTasks.remove(at: indexPath.row)
                 tableView.reloadData()
             }}
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            myTasks[indexPath.row].setValue(true, forKey: "done")
+            myTasks.remove(at: indexPath.row)
+            saveContext()
+            loadData()
+            tableView.reloadData()
+            
+        } else if indexPath.section == 1 {
+            tasks[indexPath.row].setValue(true, forKey: "done")
+            tasks.remove(at: indexPath.row)
+            saveContext()
+            loadData()
+            tableView.reloadData()
+        }
+    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
@@ -136,15 +187,18 @@ class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Swip
         let delete = SwipeAction(style: .destructive, title: nil) { (delete, indexPath) in
             
             if indexPath.section == 0 {
+                self.context.delete(self.myTasks[indexPath.row])
                 self.myTasks.remove(at: indexPath.row)
             } else if indexPath.section == 1 {
                 //TODO: add segue to warning prompt "Project is about to be deleted would you like to continue?"
-                self.projects.remove(at: indexPath.row)
+                self.context.delete(self.tasks[indexPath.row])
+                self.tasks.remove(at: indexPath.row)
             } else {
-                self.completed.remove(at: indexPath.row)
+                self.context.delete(self.completedTasks[indexPath.row])
+                self.completedTasks.remove(at: indexPath.row)
             }
         }
-        
+    
         let settings = SwipeAction(style: .default, title: nil) { (settings, indexPath) in
             //TODO: add segue to settingsVC
         }
@@ -192,22 +246,21 @@ class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Swip
         return sectionTitles[section]
     }
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             return myTasks.count
+
         } else if section == 1 {
-            return projects.count
+            return tasks.count
+           
         } else {
-            return completed.count
+            return completedTasks.count
+
         }
         
         
     }
-    
-    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -219,7 +272,7 @@ class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Swip
             cell.delegate = self
             cell.contentView.backgroundColor = .clear
             tableView.backgroundColor = .clear
-            cell.taskName.text = myTasks[indexPath.row].name
+            cell.taskName.text = myTasks[indexPath.row].taskName
             cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
             cell.projectTeam.text = "team Name"
             return cell
@@ -230,7 +283,7 @@ class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Swip
             cell.delegate = self
             cell.contentView.backgroundColor = .clear
             tableView.backgroundColor = .clear
-            cell.taskName.text = projects[indexPath.row].name
+            cell.taskName.text = tasks[indexPath.row].taskName
             cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
             cell.projectTeam.text = "team Name"
             return cell
@@ -239,7 +292,7 @@ class TaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Swip
             cell.delegate = self
             cell.contentView.backgroundColor = .clear
             tableView.backgroundColor = .clear
-            cell.taskName.text = completed[indexPath.row].name
+            cell.taskName.text = completedTasks[indexPath.row].taskName
             cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
             cell.projectTeam.text = "team Name"
             return cell
