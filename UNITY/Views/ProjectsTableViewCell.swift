@@ -25,7 +25,7 @@ class ProjectsTableViewCell: SwipeTableViewCell {
         
         super.awakeFromNib()
         backView.layer.cornerRadius = 25
-        backView.backgroundColor = #colorLiteral(red: 0.7137254902, green: 0.8901960784, blue: 0.5019607843, alpha: 1)
+        backView.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
         self.backgroundColor = .clear
  
     

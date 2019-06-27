@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Projects" representedClassName="Projects" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="projectName" attributeType="String" syncable="YES"/>
         <relationship name="childTask" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tasks" inverseName="parentProject" inverseEntity="Tasks" syncable="YES"/>
     </entity>
     <entity name="Tasks" representedClassName="Tasks" syncable="YES" codeGenerationType="class">
+        <attribute name="createdDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="done" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dueDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="myTask" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="taskName" attributeType="String" syncable="YES"/>
         <relationship name="parentProject" maxCount="1" deletionRule="Nullify" destinationEntity="Projects" inverseName="childTask" inverseEntity="Projects" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Projects" positionX="108.52734375" positionY="-7.85546875" width="128" height="73"/>
-        <element name="Tasks" positionX="-62.0859375" positionY="-7.83984375" width="151.71484375" height="103"/>
+        <element name="Projects" positionX="108.52734375" positionY="-7.85546875" width="128" height="103"/>
+        <element name="Tasks" positionX="-62.0859375" positionY="-7.83984375" width="151.71484375" height="133"/>
     </elements>
 </model>

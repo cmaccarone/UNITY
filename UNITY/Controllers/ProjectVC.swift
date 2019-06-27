@@ -169,15 +169,18 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         let delete = SwipeAction(style: .destructive, title: nil) { (delete, indexPath) in
             
             if indexPath.section == 0 {
-                self.context.delete(self.myTasks[indexPath.row])
+            self.context.delete(self.myTasks[indexPath.row])
             self.myTasks.remove(at: indexPath.row)
+                self.saveContext()
             } else if indexPath.section == 1 {
                 //TODO: add segue to warning prompt "Project is about to be deleted would you like to continue?"
                 self.context.delete(self.projects[indexPath.row])
                 self.projects.remove(at: indexPath.row)
+                self.saveContext()
             } else {
                 self.context.delete(self.completedTasks[indexPath.row])
                 self.completedTasks.remove(at: indexPath.row)
+                self.saveContext()
             }
         }
         
@@ -228,18 +231,23 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         return sectionTitles[section]
     }
   
-
+    func updateTable(){
+        saveContext()
+        loadData()
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedProj = projects[indexPath.row]
         //TODO: look into this optional more to decide if I should use it.
         if indexPath.section == 1 {
         performSegue(withIdentifier: "taskVC", sender: self)
         } else if indexPath.section == 0 {
-            myTasks[indexPath.row].done = true
-            saveContext()
-            
-            loadData()
-            tableView.reloadData()
+            myTasks[indexPath.row].done = !myTasks[indexPath.row].done
+            updateTable()
+        } else {
+            completedTasks[indexPath.row].done = !completedTasks[indexPath.row].done
+            updateTable()
         }
         
     }
@@ -264,6 +272,10 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let dateFormater = DateFormatter()
+        dateFormater.locale = Locale(identifier: "en_US")
+        dateFormater.dateStyle = .medium
+        dateFormater.timeStyle = .none
         
         switch indexPath.section {
         case 0:
@@ -274,7 +286,8 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             tableView.backgroundColor = .clear
             cell.taskName.text = myTasks[indexPath.row].taskName
             //TODO: add name of project/task here.
-            cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
+            let dateString = myTasks[indexPath.row].dueDate!
+            cell.projectDueDate.text = dateFormater.string(from: dateString)
             cell.projectTeam.text = myTasks[indexPath.row].parentProject?.projectName
             return cell
             
@@ -285,7 +298,8 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             cell.contentView.backgroundColor = .clear
             tableView.backgroundColor = .clear
             cell.taskName.text = projects[indexPath.row].projectName
-            cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
+            let dateString = projects[indexPath.row].dueDate!
+            cell.projectDueDate.text = dateFormater.string(from: dateString)
             cell.projectTeam.text = "team Name"
             return cell
         case 2:
@@ -294,7 +308,8 @@ class ProjectVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             cell.contentView.backgroundColor = .clear
             tableView.backgroundColor = .clear
             cell.taskName.text = completedTasks[indexPath.row].taskName
-            cell.projectDueDate.text = "Jan 5" //myTasks[indexPath.row].dueDate
+            let dateString = completedTasks[indexPath.row].dueDate!
+            cell.projectDueDate.text = dateFormater.string(from: dateString)
             cell.projectTeam.text = completedTasks[indexPath.row].parentProject?.projectName
             return cell
         default:
